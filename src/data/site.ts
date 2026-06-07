@@ -208,7 +208,7 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
   en: {
     metadataTitle: "Sergey Gyach - Head of Business & Systems Analysis",
     metadataDescription:
-      "Sergey Gyach portfolio: business and systems analysis leadership, integration design, AI productivity tooling, and publications.",
+      "Personal site for Sergey Gyach: business and systems analysis leadership, API and integration design, AI-assisted productivity workflows, and publications.",
     displayName: "Sergey Gyach",
     homeLabel: "Home",
     navItems: [
@@ -217,14 +217,14 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
     ],
     role: "Head of Business & Systems Analysis",
     summary:
-      "I connect product, engineering, and operations: shaping requirements, user journeys, integration contracts, and AI-assisted workflows for complex B2B platforms.",
+      "I help product, engineering, and business stakeholders turn complex B2B goals into clear requirements, user journeys, API and integration contracts, and AI-assisted delivery workflows.",
     heroImageAlt: "Portrait of Sergey Gyach against a city at night",
     primaryActionsLabel: "Primary actions",
     contactLinksLabel: "Contact links",
     overviewAriaLabel: "Experience and publications overview",
     actions: {
       resume: "Experience",
-      publications: "View Publications",
+      publications: "View publications",
       allPublications: "All publications",
       read: "Read"
     },
@@ -246,23 +246,23 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
         role: "Head of Business & Systems Analysis",
         company: "HRlink",
         summary:
-          "Lead the business and systems analysis function for a B2B HR tech platform: translating product goals into requirements, user flows, integration contracts, and scalable delivery processes. Drive AI-assisted analysis and documentation practices."
+          "Lead business and systems analysis for a B2B HR tech platform. Turn product goals into clear requirements, user flows, API and external integration contracts, and delivery processes that reduce rework. Introduce AI-assisted analysis, prototyping, and documentation practices to improve team throughput."
       },
       {
         period: "2020 - 2023",
-        role: "Customer Experience & Internal Platforms Lead",
+        role: "Customer Experience Lead, Internal Platforms",
         company: "MTS",
         summary:
-          "Led customer experience work for internal engineering products covering investment planning, reliability, monitoring, and observability. Turned research insights into product and process improvements for technical users."
+          "Led customer experience research and product improvements for internal engineering platforms covering IT investment planning, reliability, monitoring, and observability. Translated research findings into clearer workflows and process changes for technical users."
       }
     ],
     skillGroups: [
       {
-        title: "Leadership and delivery",
+        title: "Leadership and facilitation",
         values: [
-          "Technical leadership",
-          "Analytics team management",
-          "Cross-functional facilitation",
+          "Team leadership",
+          "Business analysis team management",
+          "Meeting facilitation",
           "Stakeholder alignment"
         ]
       },
@@ -271,52 +271,53 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
         values: [
           "Business analysis",
           "Systems analysis",
-          "Requirements management",
-          "Acceptance criteria"
+          "Requirements lifecycle management",
+          "Acceptance criteria and release readiness"
         ]
       },
       {
-        title: "Solution architecture",
+        title: "Solution and system design",
         values: [
-          "High-load B2B systems",
+          "Scalable B2B platforms",
           "Distributed application design",
-          "API-first integrations",
-          "Event-driven workflows"
+          "API and integration design",
+          "Event-driven architecture"
         ]
       },
       {
         title: "User flows and validation",
         values: [
           "Customer journey mapping",
-          "Interactive interface prototypes",
-          "Hypothesis validation before development",
-          "Stakeholder review and testing flows"
+          "Clickable interface prototypes",
+          "AI-assisted rapid prototyping",
+          "Pre-development hypothesis validation",
+          "Stakeholder review and usability testing flows"
         ]
       },
       {
-        title: "AI productivity systems",
+        title: "AI productivity and automation",
         values: [
-          "AI-assisted analysis",
-          "Prompt design",
+          "AI-assisted analysis workflows",
+          "Prompt design for analysis tasks",
           "Workflow automation",
-          "Knowledge base design"
+          "Knowledge management systems"
         ]
       },
       {
-        title: "Development process",
+        title: "SDLC process optimization",
         values: [
-          "Discovery-to-release workflow",
+          "Discovery-to-release process design",
           "Delivery bottleneck analysis",
           "Cross-team context handoff",
-          "Requirements, acceptance, and release metrics"
+          "Requirements quality, acceptance, and release metrics"
         ]
       }
     ],
     publications: [
       {
-        title: "TypeSpec for API documentation",
+        title: "TypeSpec for API specifications",
         summary:
-          "A practical introduction to TypeSpec as a contract-first API description language: project setup, VS Code tooling, generation of OpenAPI 3, Protobuf, and JSON Schema, plus migration from existing OpenAPI specs.",
+          "A practical guide to TypeSpec as a contract-first language for API specifications: project setup, VS Code tooling, OpenAPI 3, Protobuf, and JSON Schema generation, plus migration from existing OpenAPI documents.",
         tags: ["TypeSpec", "OpenAPI", "API design", "Technical documentation"],
         date: "Nov 23, 2024",
         source: "Habr",
