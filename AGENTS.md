@@ -124,6 +124,33 @@ curl http://127.0.0.1:3000/api/health
   external links.
 - External links should use `target="_blank"` and `rel="noopener noreferrer"`.
 
+## React and Next.js Performance Notes
+
+- Keep server components as the default for new App Router files. Add
+  `"use client"` only when a component needs hooks, browser APIs, or event
+  handlers.
+- Avoid moving large static content or metadata into client components unless it
+  is needed for locale switching or browser interaction.
+- Prefer direct imports from libraries. Do not introduce barrel files that cause
+  unrelated components or icons to enter the bundle.
+- Do not add memoization by default. Use `useMemo`, `useCallback`, or
+  `React.memo` only when there is a real expensive calculation, stable identity
+  requirement, or measured re-render issue.
+- Keep default arrays and objects outside component bodies when they are static,
+  as done by `themeOptions` and `labels` in `src/components/theme-switcher.tsx`.
+- Use `next/image` for public images that are rendered in React components, and
+  set accurate dimensions to avoid layout shift.
+- If a future page fetches independent data sources, start requests early and
+  await them together with `Promise.all`.
+- If a future feature needs a heavy widget, editor, chart, or third-party
+  integration, load it with `next/dynamic` or only after the user activates that
+  feature.
+- Keep localStorage payloads small and version them before storing structured
+  objects. Current theme and locale storage keys intentionally store only short
+  strings.
+- For client-side global event listeners, centralize subscriptions and clean
+  them up in effects. Use passive listeners for scroll or touch listeners.
+
 ## Validation Expectations
 
 Before handing off code changes, run:

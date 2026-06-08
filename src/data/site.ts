@@ -17,6 +17,11 @@ export type SkillGroup = {
   values: string[];
 };
 
+export type DetailItem = {
+  title: string;
+  summary: string;
+};
+
 export type PublicationItem = {
   title: string;
   summary: string;
@@ -51,12 +56,21 @@ export type LocalizedSiteContent = {
     max: string;
   };
   sections: {
+    impact: string;
     resume: string;
     skills: string;
+    artifacts: string;
+    expertise: string;
     publications: string;
   };
   footerRights: string;
+  benefits: DetailItem[];
   experience: ExperienceItem[];
+  artifacts: DetailItem[];
+  expertise: {
+    summary: string;
+    items: DetailItem[];
+  };
   skillGroups: SkillGroup[];
   publications: PublicationItem[];
 };
@@ -75,7 +89,7 @@ export const site = {
   max: "https://max.ru/u/f9LHodD0cOJwNP_K5y_Cy5WZPGaoIyGP7GCynA4IeNgKUAOZIoz7mweMgr0",
   maxLabel: "MAX",
   habr: "https://habr.com/ru/users/gyach/publications/articles/",
-  cvUrl: "#resume"
+  cvUrl: "/resume/sergey-gyach-cv.pdf"
 };
 
 export const defaultLocale: Locale = "ru";
@@ -104,7 +118,7 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
     contactLinksLabel: "Контактные ссылки",
     overviewAriaLabel: "Обзор резюме и публикаций",
     actions: {
-      resume: "Резюме",
+      resume: "Скачать CV",
       publications: "Смотреть публикации",
       allPublications: "Все публикации",
       read: "Читать"
@@ -116,11 +130,36 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
       max: "MAX"
     },
     sections: {
+      impact: "Чем полезен",
       resume: "Резюме",
       skills: "Навыки",
+      artifacts: "Артефакты",
+      expertise: "Публичная экспертиза",
       publications: "Публикации"
     },
     footerRights: "Все права защищены.",
+    benefits: [
+      {
+        title: "Перевожу неопределенность в рабочие решения",
+        summary:
+          "Разбираю бизнес-цели, ограничения и спорные ожидания до уровня сценариев, требований и понятных решений для разработки."
+      },
+      {
+        title: "Связываю продукт, инженерию и бизнес",
+        summary:
+          "Помогаю командам договориться о границах задач, API-контрактах, интеграциях и критериях готовности."
+      },
+      {
+        title: "Ускоряю подготовку к разработке",
+        summary:
+          "Использую ИИ-инструменты для черновиков требований, прототипов, документации и поиска разрывов в логике."
+      },
+      {
+        title: "Снижаю риск переделок",
+        summary:
+          "Выношу спорные сценарии, исключения и приемку до старта реализации, чтобы меньше исправлять после разработки."
+      }
+    ],
     experience: [
       {
         period: "2023 - сейчас",
@@ -137,6 +176,59 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
           "Исследовал и улучшал пользовательский опыт в портфеле внутренних продуктов для инвестиционного планирования, надежности, мониторинга и наблюдаемости."
       }
     ],
+    artifacts: [
+      {
+        title: "Требования и критерии приемки",
+        summary:
+          "User stories, use cases, acceptance criteria, release readiness и договоренности, которые можно передавать в разработку и тестирование."
+      },
+      {
+        title: "API и интеграционные контракты",
+        summary:
+          "Описание внешних интеграций, схем обмена, ошибок, статусов, ограничений и контрактов в форматах, понятных аналитикам и инженерам."
+      },
+      {
+        title: "Модели процессов и систем",
+        summary:
+          "BPMN, UML, C4, sequence diagrams, ER-модели и другие схемы, которые помогают согласовать поведение системы до реализации."
+      },
+      {
+        title: "Пользовательские сценарии и CJM",
+        summary:
+          "Сценарии, карты пути клиента и edge cases для согласования продукта, поддержки, тестирования и разработки."
+      },
+      {
+        title: "Прототипы и проверки гипотез",
+        summary:
+          "Интерактивные прототипы и сценарии проверки, которые помогают быстрее увидеть решение и обсудить его до затратной реализации."
+      },
+      {
+        title: "Контекст и база знаний",
+        summary:
+          "Структурированные заметки, decision records и материалы для передачи контекста между продуктом, аналитикой, разработкой и поддержкой."
+      }
+    ],
+    expertise: {
+      summary:
+        "Показываю практики аналитики, проектирования и документации через публичные материалы, рабочие примеры и открытые ссылки.",
+      items: [
+        {
+          title: "Практические разборы инструментов",
+          summary:
+            "Пишу о технологиях и подходах, которые помогают аналитикам и инженерам быстрее договариваться о контрактах и документации."
+        },
+        {
+          title: "Фокус на воспроизводимости",
+          summary:
+            "Материалы собираю как рабочие инструкции: с настройкой, примерами, ограничениями и ссылками на источники."
+        },
+        {
+          title: "Открытые профессиональные следы",
+          summary:
+            "Публикации, GitHub и контактные каналы собраны рядом, чтобы было проще проверить контекст и связаться по задаче."
+        }
+      ]
+    },
     skillGroups: [
       {
         title: "Софт-скиллы",
@@ -223,7 +315,7 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
     contactLinksLabel: "Contact links",
     overviewAriaLabel: "Experience and publications overview",
     actions: {
-      resume: "Experience",
+      resume: "Download CV",
       publications: "View publications",
       allPublications: "All publications",
       read: "Read"
@@ -235,11 +327,36 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
       max: "MAX"
     },
     sections: {
+      impact: "How I Help",
       resume: "Experience",
       skills: "Core skills",
+      artifacts: "Artifacts",
+      expertise: "Public Expertise",
       publications: "Publications"
     },
     footerRights: "All rights reserved.",
+    benefits: [
+      {
+        title: "Turn ambiguity into workable decisions",
+        summary:
+          "Break down business goals, constraints, and conflicting expectations into user flows, requirements, and decisions engineering teams can act on."
+      },
+      {
+        title: "Connect product, engineering, and business",
+        summary:
+          "Help teams align on scope, API contracts, integrations, readiness criteria, and the tradeoffs behind each decision."
+      },
+      {
+        title: "Accelerate pre-development work",
+        summary:
+          "Use AI-assisted workflows for requirement drafts, prototypes, documentation, and early checks for missing logic."
+      },
+      {
+        title: "Reduce avoidable rework",
+        summary:
+          "Surface edge cases, exception paths, and acceptance criteria before implementation so fewer issues are discovered late."
+      }
+    ],
     experience: [
       {
         period: "2023 - Present",
@@ -256,6 +373,59 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
           "Led customer experience research and product improvements for internal engineering platforms covering IT investment planning, reliability, monitoring, and observability. Translated research findings into clearer workflows and process changes for technical users."
       }
     ],
+    artifacts: [
+      {
+        title: "Requirements and acceptance criteria",
+        summary:
+          "User stories, use cases, acceptance criteria, release readiness notes, and agreements ready for development and QA."
+      },
+      {
+        title: "API and integration contracts",
+        summary:
+          "External integration descriptions, exchange schemas, errors, statuses, limits, and contracts that analysts and engineers can review together."
+      },
+      {
+        title: "Process and system models",
+        summary:
+          "BPMN, UML, C4, sequence diagrams, ER models, and other diagrams that align system behavior before implementation."
+      },
+      {
+        title: "User flows and CJM",
+        summary:
+          "User journeys, customer journey maps, and edge cases for product, support, QA, and engineering alignment."
+      },
+      {
+        title: "Prototypes and hypothesis checks",
+        summary:
+          "Clickable prototypes and validation scenarios that make a solution visible before the team commits to expensive implementation work."
+      },
+      {
+        title: "Context and knowledge base",
+        summary:
+          "Structured notes, decision records, and handoff materials for product, analysis, engineering, and support teams."
+      }
+    ],
+    expertise: {
+      summary:
+        "I share analysis, system design, and documentation practices through public materials, working examples, and open professional links.",
+      items: [
+        {
+          title: "Practical tool write-ups",
+          summary:
+            "Write about technologies and practices that help analysts and engineers align on contracts, documentation, and delivery work."
+        },
+        {
+          title: "Reproducible examples",
+          summary:
+            "Structure materials as working guides with setup steps, examples, limitations, and links to primary sources."
+        },
+        {
+          title: "Open professional footprint",
+          summary:
+            "Publications, GitHub, and contact channels are kept close together so the context is easy to inspect."
+        }
+      ]
+    },
     skillGroups: [
       {
         title: "Leadership and facilitation",

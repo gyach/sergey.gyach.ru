@@ -11,3 +11,4 @@ src/app/page 2.tsx
 src/data/site 2.ts
 public/resume/*.pdf
 !public/resume/README.md
+!public/resume/sergey-gyach-cv.pdf
