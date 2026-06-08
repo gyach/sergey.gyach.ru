@@ -246,36 +246,26 @@ export function LocalizedHome() {
 
       <footer className="site-footer">
         <div className="container footer-grid">
-          <div>
-            <a className="footer-brand" href="#top">
-              {site.domain}
-            </a>
-            <p>
-              © 2026 {content.displayName}. {content.footerRights}
-            </p>
-          </div>
-          <div className="footer-links">
-            <a href={site.github} {...externalWebLinkProps}>
-              <GithubIcon size={20} />
-              {site.githubLabel}
-            </a>
-            <a href={`mailto:${site.email}`}>
-              <Mail size={20} aria-hidden="true" />
-              {site.email}
-            </a>
-            <a href={site.telegram} {...externalWebLinkProps}>
-              <Send size={20} aria-hidden="true" />
-              {site.telegramHandle}
-            </a>
-            <a href={site.max} {...externalWebLinkProps}>
-              <MaxIcon size={20} />
-              {site.maxLabel}
-            </a>
-            <a href={site.url}>
-              <Globe2 size={20} aria-hidden="true" />
-              {site.url}
-            </a>
-          </div>
+          <a className="footer-item" href={site.github} {...externalWebLinkProps}>
+            <GithubIcon size={20} />
+            {site.githubLabel}
+          </a>
+          <a className="footer-item" href={`mailto:${site.email}`}>
+            <Mail size={20} aria-hidden="true" />
+            {site.email}
+          </a>
+          <a className="footer-item" href={site.telegram} {...externalWebLinkProps}>
+            <Send size={20} aria-hidden="true" />
+            {site.telegramHandle}
+          </a>
+          <a className="footer-item" href={site.max} {...externalWebLinkProps}>
+            <MaxIcon size={20} />
+            {site.maxLabel}
+          </a>
+          <a className="footer-item" href={site.url}>
+            <Globe2 size={20} aria-hidden="true" />
+            {site.url}
+          </a>
         </div>
       </footer>
     </main>

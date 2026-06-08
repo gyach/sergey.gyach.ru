@@ -63,7 +63,6 @@ export type LocalizedSiteContent = {
     expertise: string;
     publications: string;
   };
-  footerRights: string;
   benefits: DetailItem[];
   experience: ExperienceItem[];
   artifacts: DetailItem[];
@@ -137,7 +136,6 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
       expertise: "Публичная экспертиза",
       publications: "Публикации"
     },
-    footerRights: "Все права защищены.",
     benefits: [
       {
         title: "Перевожу неопределенность в рабочие решения",
@@ -334,7 +332,6 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
       expertise: "Public Expertise",
       publications: "Publications"
     },
-    footerRights: "All rights reserved.",
     benefits: [
       {
         title: "Turn ambiguity into workable decisions",
