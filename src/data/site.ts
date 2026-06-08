@@ -88,7 +88,10 @@ export const site = {
   max: "https://max.ru/u/f9LHodD0cOJwNP_K5y_Cy5WZPGaoIyGP7GCynA4IeNgKUAOZIoz7mweMgr0",
   maxLabel: "MAX",
   habr: "https://habr.com/ru/users/gyach/publications/articles/",
-  cvUrl: "/resume/sergey-gyach-cv.pdf"
+  cvUrls: {
+    ru: "/resume/sergey-gyach-cv-ru.pdf",
+    en: "/resume/sergey-gyach-cv-en.pdf"
+  }
 };
 
 export const defaultLocale: Locale = "ru";
@@ -172,6 +175,13 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
         company: "МТС",
         summary:
           "Исследовал и улучшал пользовательский опыт в портфеле внутренних продуктов для инвестиционного планирования, надежности, мониторинга и наблюдаемости."
+      },
+      {
+        period: "Ранее",
+        role: "20+ лет опыта в бизнес- и операционных доменах",
+        company: "Клиентский сервис, логистика, управление персоналом, строительство",
+        summary:
+          "Работал с процессами, требованиями и изменениями в разных предметных областях: разбирал пользовательские и операционные сценарии, согласовывал ожидания участников и переводил практический контекст бизнеса в понятные задачи для команд."
       }
     ],
     artifacts: [
@@ -368,6 +378,13 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
         company: "MTS",
         summary:
           "Led customer experience research and product improvements for internal engineering platforms covering IT investment planning, reliability, monitoring, and observability. Translated research findings into clearer workflows and process changes for technical users."
+      },
+      {
+        period: "Earlier",
+        role: "20+ years across business and operations domains",
+        company: "Customer service, logistics, human resources, construction",
+        summary:
+          "Worked with processes, requirements, and change across multiple domains: customer and operational workflows, stakeholder expectations, and translating practical business context into clear work for teams."
       }
     ],
     artifacts: [

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "generate:resume": "node --no-warnings scripts/generate-resume-pdfs.mjs",
     "prepare:standalone": "rm -rf .next/standalone/public .next/standalone/.next/static && mkdir -p .next/standalone/.next && cp -R public .next/standalone/public && cp -R .next/static .next/standalone/.next/static",
     "start": "npm run prepare:standalone && node .next/standalone/server.js",
     "lint": "eslint ."

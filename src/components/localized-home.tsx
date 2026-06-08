@@ -30,6 +30,8 @@ const externalWebLinkProps = {
 export function LocalizedHome() {
   const { locale } = useLanguage();
   const content = localizedContent[locale];
+  const cvUrl = site.cvUrls[locale];
+  const cvDownloadName = `sergey-gyach-cv-${locale}.pdf`;
 
   useEffect(() => {
     document.title = content.metadataTitle;
@@ -56,8 +58,8 @@ export function LocalizedHome() {
             <div className="hero-actions" aria-label={content.primaryActionsLabel}>
               <a
                 className="button button-primary"
-                href={site.cvUrl}
-                download="sergey-gyach-cv.pdf"
+                href={cvUrl}
+                download={cvDownloadName}
               >
                 <Download size={18} aria-hidden="true" />
                 {content.actions.resume}
@@ -213,7 +215,13 @@ export function LocalizedHome() {
           />
           <div className="publication-list publication-grid">
             {content.publications.map((publication) => (
-              <article className="publication-card" key={publication.url}>
+              <a
+                className="publication-card"
+                href={publication.url}
+                key={publication.url}
+                aria-label={`${content.actions.read}: ${publication.title}`}
+                {...externalWebLinkProps}
+              >
                 <div className="publication-icon" aria-hidden="true">
                   <FileText size={24} />
                 </div>
@@ -231,14 +239,14 @@ export function LocalizedHome() {
                     ))}
                   </ul>
                   <div className="publication-links">
-                    <a href={publication.url} {...externalWebLinkProps}>
+                    <span className="publication-link">
                       <ExternalLink size={14} aria-hidden="true" />
                       {content.actions.read}
                       <ArrowUpRight size={14} aria-hidden="true" />
-                    </a>
+                    </span>
                   </div>
                 </div>
-              </article>
+              </a>
             ))}
           </div>
         </div>
