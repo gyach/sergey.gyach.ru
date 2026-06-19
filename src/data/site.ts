@@ -59,17 +59,10 @@ export type LocalizedSiteContent = {
     impact: string;
     resume: string;
     skills: string;
-    artifacts: string;
-    expertise: string;
     publications: string;
   };
   benefits: DetailItem[];
   experience: ExperienceItem[];
-  artifacts: DetailItem[];
-  expertise: {
-    summary: string;
-    items: DetailItem[];
-  };
   skillGroups: SkillGroup[];
   publications: PublicationItem[];
 };
@@ -135,8 +128,6 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
       impact: "Чем полезен",
       resume: "Резюме",
       skills: "Навыки",
-      artifacts: "Артефакты",
-      expertise: "Публичная экспертиза",
       publications: "Публикации"
     },
     benefits: [
@@ -184,59 +175,6 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
           "Работал с процессами, требованиями и изменениями в разных предметных областях: разбирал пользовательские и операционные сценарии, согласовывал ожидания участников и переводил практический контекст бизнеса в понятные задачи для команд."
       }
     ],
-    artifacts: [
-      {
-        title: "Требования и критерии приемки",
-        summary:
-          "User stories, use cases, acceptance criteria, release readiness и договоренности, которые можно передавать в разработку и тестирование."
-      },
-      {
-        title: "API и интеграционные контракты",
-        summary:
-          "Описание внешних интеграций, схем обмена, ошибок, статусов, ограничений и контрактов в форматах, понятных аналитикам и инженерам."
-      },
-      {
-        title: "Модели процессов и систем",
-        summary:
-          "BPMN, UML, C4, sequence diagrams, ER-модели и другие схемы, которые помогают согласовать поведение системы до реализации."
-      },
-      {
-        title: "Пользовательские сценарии и CJM",
-        summary:
-          "Сценарии, карты пути клиента и edge cases для согласования продукта, поддержки, тестирования и разработки."
-      },
-      {
-        title: "Прототипы и проверки гипотез",
-        summary:
-          "Интерактивные прототипы и сценарии проверки, которые помогают быстрее увидеть решение и обсудить его до затратной реализации."
-      },
-      {
-        title: "Контекст и база знаний",
-        summary:
-          "Структурированные заметки, decision records и материалы для передачи контекста между продуктом, аналитикой, разработкой и поддержкой."
-      }
-    ],
-    expertise: {
-      summary:
-        "Показываю практики аналитики, проектирования и документации через публичные материалы, рабочие примеры и открытые ссылки.",
-      items: [
-        {
-          title: "Практические разборы инструментов",
-          summary:
-            "Пишу о технологиях и подходах, которые помогают аналитикам и инженерам быстрее договариваться о контрактах и документации."
-        },
-        {
-          title: "Фокус на воспроизводимости",
-          summary:
-            "Материалы собираю как рабочие инструкции: с настройкой, примерами, ограничениями и ссылками на источники."
-        },
-        {
-          title: "Открытые профессиональные следы",
-          summary:
-            "Публикации, GitHub и контактные каналы собраны рядом, чтобы было проще проверить контекст и связаться по задаче."
-        }
-      ]
-    },
     skillGroups: [
       {
         title: "Софт-скиллы",
@@ -295,6 +233,15 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
     ],
     publications: [
       {
+        title: "Контекстное окно человека: чем его теперь заполнять",
+        summary:
+          "Размышление о том, как ИИ меняет ценность экспертизы в разработке: вместо узкой специализации на первый план выходит широкий контекст по смежным доменам и понимание, где ИИ можно доверять, а где перепроверять. Разбор того, чем теперь стоит заполнять «контекстное окно» специалиста.",
+        tags: ["Контекстное окно", "Промпт-инжиниринг", "ИИ", "SDLC"],
+        date: "19 июн 2026",
+        source: "Habr",
+        url: "https://habr.com/ru/articles/1049788/"
+      },
+      {
         title: "Язык TypeSpec для создания API-документации",
         summary:
           "Краткий практический обзор TypeSpec как языка описания API: настройка проекта, работа в VS Code, генерация OpenAPI 3, Protobuf и JSON Schema, а также миграция существующих спецификаций OpenAPI.",
@@ -338,8 +285,6 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
       impact: "How I Help",
       resume: "Experience",
       skills: "Core skills",
-      artifacts: "Artifacts",
-      expertise: "Public Expertise",
       publications: "Publications"
     },
     benefits: [
@@ -387,59 +332,6 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
           "Worked with processes, requirements, and change across multiple domains: customer and operational workflows, stakeholder expectations, and translating practical business context into clear work for teams."
       }
     ],
-    artifacts: [
-      {
-        title: "Requirements and acceptance criteria",
-        summary:
-          "User stories, use cases, acceptance criteria, release readiness notes, and agreements ready for development and QA."
-      },
-      {
-        title: "API and integration contracts",
-        summary:
-          "External integration descriptions, exchange schemas, errors, statuses, limits, and contracts that analysts and engineers can review together."
-      },
-      {
-        title: "Process and system models",
-        summary:
-          "BPMN, UML, C4, sequence diagrams, ER models, and other diagrams that align system behavior before implementation."
-      },
-      {
-        title: "User flows and CJM",
-        summary:
-          "User journeys, customer journey maps, and edge cases for product, support, QA, and engineering alignment."
-      },
-      {
-        title: "Prototypes and hypothesis checks",
-        summary:
-          "Clickable prototypes and validation scenarios that make a solution visible before the team commits to expensive implementation work."
-      },
-      {
-        title: "Context and knowledge base",
-        summary:
-          "Structured notes, decision records, and handoff materials for product, analysis, engineering, and support teams."
-      }
-    ],
-    expertise: {
-      summary:
-        "I share analysis, system design, and documentation practices through public materials, working examples, and open professional links.",
-      items: [
-        {
-          title: "Practical tool write-ups",
-          summary:
-            "Write about technologies and practices that help analysts and engineers align on contracts, documentation, and delivery work."
-        },
-        {
-          title: "Reproducible examples",
-          summary:
-            "Structure materials as working guides with setup steps, examples, limitations, and links to primary sources."
-        },
-        {
-          title: "Open professional footprint",
-          summary:
-            "Publications, GitHub, and contact channels are kept close together so the context is easy to inspect."
-        }
-      ]
-    },
     skillGroups: [
       {
         title: "Leadership and facilitation",
@@ -498,6 +390,15 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
       }
     ],
     publications: [
+      {
+        title: "A human's context window: what to fill it with now",
+        summary:
+          "A reflection on how AI changes the value of expertise in software delivery: instead of narrow specialization, what matters more is broad context across adjacent domains and clear principles about where to trust AI and where to double-check it. A look at what to load into a professional's context window.",
+        tags: ["Context window", "Prompt engineering", "AI", "SDLC"],
+        date: "Jun 19, 2026",
+        source: "Habr",
+        url: "https://habr.com/ru/articles/1049788/"
+      },
       {
         title: "TypeSpec for API specifications",
         summary:

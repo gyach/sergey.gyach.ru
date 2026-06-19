@@ -420,8 +420,6 @@ a.footer-item:hover,
 
 #impact,
 #resume,
-#artifacts,
-#public-expertise,
 #publications {
   scroll-margin-top: 92px;
 }
@@ -432,7 +430,6 @@ a.footer-item:hover,
 }
 
 .impact-section,
-.expertise-section,
 .publications-section {
   background: var(--surface);
 }
@@ -446,11 +443,6 @@ a.footer-item:hover,
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.artifact-grid,
-.expertise-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
 .detail-card {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -458,44 +450,8 @@ a.footer-item:hover,
   padding: 18px;
 }
 
-.impact-section .detail-card,
-.expertise-section .detail-card {
+.impact-section .detail-card {
   background: var(--bg);
-}
-
-.expertise-layout {
-  display: grid;
-  grid-template-columns: minmax(280px, 0.55fr) minmax(0, 1fr);
-  gap: clamp(30px, 5vw, 58px);
-  align-items: start;
-}
-
-.expertise-copy {
-  min-width: 0;
-}
-
-.section-intro {
-  max-width: 540px;
-}
-
-.expertise-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px 18px;
-  margin-top: 22px;
-  color: var(--accent-strong);
-  font-size: 14px;
-  font-weight: 680;
-}
-
-.expertise-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.expertise-links a:hover {
-  color: var(--accent);
 }
 
 .resume-layout {
@@ -610,7 +566,6 @@ a.footer-item:hover,
 .timeline p:not(.period):not(.company),
 .skill-group p,
 .detail-card p,
-.section-intro,
 .publication-card p {
   margin: 7px 0 0;
   color: var(--muted);
@@ -737,8 +692,7 @@ a.footer-item:hover,
 
 @media (max-width: 1180px) {
   .hero-grid,
-  .resume-layout,
-  .expertise-layout {
+  .resume-layout {
     grid-template-columns: 1fr;
   }
 
@@ -755,8 +709,6 @@ a.footer-item:hover,
 
   .publication-grid,
   .impact-grid,
-  .artifact-grid,
-  .expertise-grid,
   .skills-panel {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -827,8 +779,6 @@ a.footer-item:hover,
 
   #impact,
   #resume,
-  #artifacts,
-  #public-expertise,
   #publications {
     scroll-margin-top: 82px;
   }
@@ -872,8 +822,6 @@ a.footer-item:hover,
 
   .skills-panel,
   .impact-grid,
-  .artifact-grid,
-  .expertise-grid,
   .publication-grid {
     grid-template-columns: 1fr;
   }

@@ -150,59 +150,6 @@ export function LocalizedHome() {
       </section>
 
       <section
-        className="content-section artifacts-section"
-        aria-labelledby="artifacts"
-      >
-        <div className="container">
-          <SectionHeading id="artifacts" title={content.sections.artifacts} />
-          <div className="detail-grid artifact-grid">
-            {content.artifacts.map((item) => (
-              <article className="detail-card" key={item.title}>
-                <h3>{item.title}</h3>
-                <p>{item.summary}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
-        className="content-section expertise-section"
-        aria-labelledby="public-expertise"
-      >
-        <div className="container expertise-layout">
-          <div className="expertise-copy">
-            <SectionHeading
-              id="public-expertise"
-              title={content.sections.expertise}
-            />
-            <p className="section-intro">{content.expertise.summary}</p>
-            <div className="expertise-links">
-              <a href={site.habr} {...externalWebLinkProps}>
-                <ExternalLink size={16} aria-hidden="true" />
-                {content.actions.allPublications}
-                <ArrowUpRight size={14} aria-hidden="true" />
-              </a>
-              <a href={site.github} {...externalWebLinkProps}>
-                <GithubIcon size={16} />
-                {content.contactLabels.github}
-                <ArrowUpRight size={14} aria-hidden="true" />
-              </a>
-            </div>
-          </div>
-
-          <div className="detail-grid expertise-grid">
-            {content.expertise.items.map((item) => (
-              <article className="detail-card" key={item.title}>
-                <h3>{item.title}</h3>
-                <p>{item.summary}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
         className="content-section publications-section"
         aria-labelledby="publications"
       >
