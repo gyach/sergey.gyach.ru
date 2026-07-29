@@ -85,32 +85,40 @@ The workflow will have two jobs:
 2. `deploy` depends on `build`, targets the `github-pages` environment, and
    publishes the artifact.
 
-The workflow will use the versions in GitHub's current official Next.js Pages
-starter:
+The workflow will use the current Node 24 action lines:
 
-- `actions/checkout@v4`;
-- `actions/setup-node@v4`;
-- `actions/configure-pages@v5`;
-- `actions/upload-pages-artifact@v3`;
+- `actions/checkout@v7`;
+- `actions/setup-node@v6`;
+- `actions/configure-pages@v6`;
+- `actions/upload-pages-artifact@v4`;
 - `actions/deploy-pages@v5`.
 
-`actions/configure-pages@v5` will be called without
+`actions/configure-pages@v6` will be called without
 `static_site_generator: next`. Its Next.js auto-configuration does not support
 the repository's `next.config.ts`; the required export and image settings will
 instead remain explicit in that file.
 
-The workflow will grant:
+The workflow default will grant only:
 
 ```yaml
 permissions:
   contents: read
-  pages: write
-  id-token: write
 ```
 
-The `deploy` job will declare:
+The `build` job will add read-only Pages access for `configure-pages`:
 
 ```yaml
+permissions:
+  contents: read
+  pages: read
+```
+
+The `deploy` job will declare only the permissions required to publish:
+
+```yaml
+permissions:
+  pages: write
+  id-token: write
 needs: build
 environment:
   name: github-pages
@@ -130,7 +138,11 @@ After the static build, the workflow will fail unless these files exist:
 - `out/icons/icon-light.svg`;
 - `out/icons/icon-dark.svg`;
 - `out/resume/sergey-gyach-cv-ru.pdf`;
-- `out/resume/sergey-gyach-cv-en.pdf`.
+- `out/resume/sergey-gyach-cv-en.pdf`;
+- a non-empty `out/_next/static/` directory referenced by `out/index.html`.
+
+The workflow will also fail when the generated output reaches GitHub Pages'
+supported 1 GB artifact limit.
 
 A lint, build, or artifact validation failure prevents the deploy job from
 running. The previously published GitHub Pages version remains active.
@@ -159,9 +171,14 @@ End-to-end production verification must use the custom domain.
 Local automated validation will include:
 
 ```bash
+npm ci
 npm run lint
 npm run build
 ```
+
+The lockfile must remain unchanged after dependency installation and build.
+Before removing a prior generated `out/`, verification must confirm that the
+path is ignored, untracked, and not a symbolic link.
 
 The generated `out/` directory will be served by a local static HTTP server.
 Checks will cover:
@@ -230,4 +247,5 @@ The migration is complete when:
 - [GitHub Pages custom workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
 - [GitHub Pages publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
 - [GitHub Pages custom domains](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
-- [Official Next.js Pages starter workflow](https://github.com/actions/starter-workflows/blob/main/pages/nextjs.yml)
+- [GitHub Actions Node 20 deprecation](https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/)
+- [GitHub Pages deployment action](https://github.com/actions/deploy-pages)
