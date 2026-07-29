@@ -7,7 +7,7 @@ this repository without rediscovering the basics.
 
 `sergey.gyach.ru` is a personal resume and publications site built with the
 Next.js App Router. The site is bilingual (`ru` and `en`), has light, dark, and
-system theme modes, and is deployed as a standalone Dockerized Next.js app.
+system theme modes, and is statically exported and deployed to GitHub Pages.
 
 The primary editable content lives in `src/data/site.ts`.
 
@@ -15,7 +15,8 @@ The primary editable content lives in `src/data/site.ts`.
 
 - Node.js 22, declared in `.nvmrc`.
 - npm with `package-lock.json`; use npm, not yarn or pnpm.
-- Next.js 16 with `output: "standalone"` in `next.config.ts`.
+- Next.js 16 with `output: "export"` in `next.config.ts`.
+- `images.unoptimized: true` is required for GitHub Pages.
 - React 19.
 - TypeScript with `strict: true`.
 - ESLint 9 flat config through `eslint.config.mjs`.
@@ -46,32 +47,20 @@ npm run lint
 npm run build
 ```
 
-Run the production standalone server after a successful build:
+Inspect the production static export after a successful build:
 
 ```bash
-HOSTNAME=127.0.0.1 PORT=3000 npm start
+python3 -m http.server 3000 --directory out
 ```
 
-Build and run Docker locally:
-
-```bash
-docker build -t sergey-gyach-ru .
-docker run --rm -p 3000:3000 sergey-gyach-ru
-```
-
-Health check:
-
-```bash
-curl http://127.0.0.1:3000/api/health
-```
+Any static HTTP server may be used. No production Node server is part of the
+repository.
 
 ## Repository Map
 
 - `src/app/layout.tsx` - root metadata, viewport config, theme initialization
   script, global CSS import.
 - `src/app/page.tsx` - wraps the homepage in theme and language providers.
-- `src/app/api/health/route.ts` - JSON health endpoint used by Docker and
-  deploy checks.
 - `src/app/globals.css` - all layout, responsive, theme, and component styles.
 - `src/components/` - small presentational and client components.
 - `src/components/language-provider.tsx` - locale state and localStorage sync.
@@ -80,11 +69,8 @@ curl http://127.0.0.1:3000/api/health
   experience, skills, and publications.
 - `public/images/` - public images used by the site.
 - `public/icons/` - theme-aware favicon SVGs.
-- `public/resume/README.md` - placeholder instructions for a future public CV
-  PDF.
-- `scripts/timeweb-deploy.sh` - remote Docker deployment script.
-- `.github/workflows/deploy.yml` - build, push to GHCR, and deploy on pushes to
-  `main`.
+- `public/resume/` - committed RU and EN CV PDFs plus regeneration instructions.
+- `.github/workflows/deploy.yml` - validates and deploys `out/` to GitHub Pages.
 
 ## Content and Localization Rules
 
@@ -99,9 +85,8 @@ curl http://127.0.0.1:3000/api/health
   `metadataDescription` for each locale.
 - If adding navigation links, update `navItems` in both locales and make sure
   the target section has a matching `id`.
-- `site.cvUrl` currently points to `#resume`. If a CV PDF is added under
-  `public/resume/`, change it to a public path such as
-  `/resume/sergey-gyach-cv.pdf`.
+- `site.cvUrls` contains the locale-specific CV paths. Both paths must continue
+  to point to their corresponding files under `public/resume/`.
 - If replacing the hero image, update the image file under `public/images/`,
   keep the `next/image` dimensions accurate, and update localized alt text.
 
@@ -140,6 +125,8 @@ curl http://127.0.0.1:3000/api/health
   as done by `themeOptions` and `labels` in `src/components/theme-switcher.tsx`.
 - Use `next/image` for public images that are rendered in React components, and
   set accurate dimensions to avoid layout shift.
+- Static Pages hosting requires unoptimized images or an explicitly configured
+  external loader.
 - If a future page fetches independent data sources, start requests early and
   await them together with `Promise.all`.
 - If a future feature needs a heavy widget, editor, chart, or third-party
@@ -166,23 +153,25 @@ at `http://localhost:3000` on desktop and mobile widths. Check that:
 - language switching works for `ru` and `en`;
 - light, dark, and auto theme modes work;
 - text does not overlap or overflow on mobile;
-- the hero image and public assets load correctly;
-- `/api/health` still returns JSON with status `ok`.
+- `out/index.html`, images, favicons, and both CV PDFs are present and load
+  correctly;
+- the browser console has no errors and the network has no failed asset
+  requests.
 
 There is no dedicated test suite in this repository at the time of writing, so
 lint and build are the primary automated gates.
 
 ## Deployment Notes
 
-- The Docker image is built with Node 22 Alpine.
-- The production image runs the standalone Next.js server on `PORT`, defaulting
-  to `3000`.
-- `.github/workflows/deploy.yml` deploys only from the `main` branch.
-- Deployment pushes images to GHCR and then runs `scripts/timeweb-deploy.sh`
-  over SSH on Timeweb.
-- Do not run `scripts/timeweb-deploy.sh` unless the user explicitly asks for a
-  deployment. It can remove and replace the running Docker container.
-- Required deployment secrets are documented in `README.md`.
+- `.github/workflows/deploy.yml` deploys only `main`.
+- The build job runs lint and static export before uploading `out/`.
+- The deploy job publishes through the protected `github-pages` environment.
+- The custom domain and DNS are configured outside the repository.
+- Do not change Pages settings, DNS, or the production domain unless the user
+  explicitly asks.
+- Static hosting does not support cookies, Server Actions, request-dependent
+  route handlers, runtime redirects or headers, incremental static
+  regeneration, or the default Next.js image optimizer.
 
 ## Agent Workflow
 

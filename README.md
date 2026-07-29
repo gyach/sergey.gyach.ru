@@ -5,17 +5,44 @@ Next.js site for a resume and publications.
 ## Local development
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-The app runs on `http://localhost:3000` by default.
+The development server runs at `http://localhost:3000` by default.
 
-For a local production run after `npm run build`:
+## Production build
 
 ```bash
-HOSTNAME=127.0.0.1 PORT=3000 npm start
+npm run lint
+npm run build
 ```
+
+Next.js exports the complete static site to `out/`. To inspect that output
+locally, serve `out/` with any static HTTP server.
+
+## GitHub Pages deployment
+
+Pushes to `main` run `.github/workflows/deploy.yml`. The workflow validates the
+project, builds `out/`, uploads it as a GitHub Pages artifact, and deploys it to
+the `github-pages` environment.
+
+Repository setup:
+
+1. Select **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+2. Restrict the `github-pages` environment to `main`.
+3. Add `sergey.gyach.ru` as the custom domain.
+4. Configure the `sergey` DNS CNAME to `gyach.github.io`.
+5. After GitHub provisions the certificate, enable **Enforce HTTPS**.
+
+The site intentionally has no `basePath` because production is served from the
+root of `https://sergey.gyach.ru`. Do not validate the final asset paths through
+the repository subpath URL.
+
+GitHub Pages only serves static files. Features that require a Next.js runtime,
+including request-dependent route handlers, cookies, Server Actions, runtime
+redirects or headers, incremental static regeneration, and the default image
+optimizer, are not supported.
 
 ## Content
 
@@ -30,35 +57,3 @@ Main editable content is in `src/data/site.ts`:
 The language switcher stores the selected locale in `localStorage` under `sergey.gyach.ru.locale`. If no value is saved, the app uses the browser locale for `ru`/`en` and falls back to `ru`.
 
 The hero image is stored at `public/images/avatar-2026.jpg`.
-
-## Docker
-
-```bash
-docker build -t sergey-gyach-ru .
-docker run --rm -p 3000:3000 sergey-gyach-ru
-```
-
-Health check endpoint:
-
-```bash
-curl http://127.0.0.1:3000/api/health
-```
-
-## GitHub Actions deploy to Timeweb
-
-The workflow `.github/workflows/deploy.yml` builds the Docker image, pushes it to GHCR, then connects to Timeweb over SSH and runs `scripts/timeweb-deploy.sh`.
-
-Required repository secrets:
-
-- `TIMEWEB_HOST` - Timeweb server host or IP
-- `TIMEWEB_USER` - SSH user
-- `TIMEWEB_SSH_KEY` - private SSH key with access to the server
-
-Optional repository secrets:
-
-- `TIMEWEB_SSH_PORT` - defaults to `22`
-- `TIMEWEB_APP_PORT` - host port to publish, defaults to `3000`
-- `TIMEWEB_BIND_HOST` - bind address, defaults to `127.0.0.1`
-- `GHCR_TOKEN` - optional token for GHCR pull if the default GitHub token cannot pull the package
-
-Before replacing the running container, the deploy script checks that `TIMEWEB_APP_PORT` is not occupied by another Docker container or a non-app process. If the port is busy, deployment stops before touching the current app container.
