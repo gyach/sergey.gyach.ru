@@ -109,7 +109,7 @@ export function LanguageProvider({
   );
 
   useEffect(() => {
-    persistLocale(locale);
+    document.documentElement.lang = locale;
   }, [locale]);
 
   const setLocale = useCallback((nextLocale: Locale) => {
