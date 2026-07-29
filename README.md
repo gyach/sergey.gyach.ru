@@ -29,6 +29,8 @@ the `github-pages` environment.
 
 Repository setup:
 
+The following are manual external configuration actions and require explicit authorization before they are performed.
+
 1. Select **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 2. Restrict the `github-pages` environment to `main`.
 3. Add `sergey.gyach.ru` as the custom domain.
