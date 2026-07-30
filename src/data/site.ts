@@ -233,6 +233,21 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
     ],
     publications: [
       {
+        title: "AI-driven hiring: я хотел лучше оценивать кандидатов, а ИИ начал оценивать меня",
+        summary:
+          "Размышление об использовании ИИ на собеседованиях: как подготовка, транскрипция и последующий разбор помогают меньше опираться на первое впечатление и получать обратную связь о собственной работе.",
+        tags: [
+          "Искусственный интеллект",
+          "Собеседования",
+          "Транскрипция",
+          "Самооценка",
+          "Обратная связь"
+        ],
+        date: "29 июл 2026",
+        source: "Habr",
+        url: "https://habr.com/ru/articles/1064206/"
+      },
+      {
         title: "Контекстное окно человека: чем его теперь заполнять",
         summary:
           "Размышление о том, как ИИ меняет ценность экспертизы в разработке: вместо узкой специализации на первый план выходит широкий контекст по смежным доменам и понимание, где ИИ можно доверять, а где перепроверять. Разбор того, чем теперь стоит заполнять «контекстное окно» специалиста.",
@@ -390,6 +405,22 @@ export const localizedContent: Record<Locale, LocalizedSiteContent> = {
       }
     ],
     publications: [
+      {
+        title:
+          "AI-driven hiring: I wanted to assess candidates better, then AI started assessing me",
+        summary:
+          "A reflection on using AI in interviews: preparation, transcription, and post-interview review can reduce reliance on first impressions and provide feedback on the interviewer’s own work.",
+        tags: [
+          "Artificial intelligence",
+          "Interviews",
+          "Transcription",
+          "Self-assessment",
+          "Feedback"
+        ],
+        date: "Jul 29, 2026",
+        source: "Habr",
+        url: "https://habr.com/ru/articles/1064206/"
+      },
       {
         title: "A human's context window: what to fill it with now",
         summary:
