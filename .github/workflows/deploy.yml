@@ -54,7 +54,7 @@ jobs:
           test -f out/resume/sergey-gyach-cv-en.pdf
           test -d out/_next/static
           test -n "$(find out/_next/static -type f -print -quit)"
-          rg -q '/_next/static/' out/index.html
+          grep -q '/_next/static/' out/index.html
           out_kib="$(du -sk out | cut -f1)"
           test "$out_kib" -lt 1048576
 
