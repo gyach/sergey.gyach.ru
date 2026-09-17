@@ -677,6 +677,7 @@
         margin-top: 7px;
       }
       .level-steps {
+        --level-circle-size: 70px;
         display: flex;
         justify-content: space-between;
         position: relative;
@@ -686,13 +687,18 @@
       .level-steps:before {
         content: "";
         position: absolute;
-        top: 34px;
+        top: calc(var(--level-circle-size) / 2);
+        transform: translateY(-50%);
         left: 7%;
         right: 7%;
         height: 3px;
         background: var(--orange);
       }
       .level-step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
         position: relative;
         flex: 1;
         padding: 0;
@@ -703,13 +709,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 70px;
-        height: 70px;
+        width: var(--level-circle-size);
+        height: var(--level-circle-size);
+        flex-shrink: 0;
         border: 2px solid var(--navy);
         border-radius: 50%;
         background: var(--cream);
         font-size: 38px;
-        margin: auto auto 13px;
+        margin: 0 auto 13px;
       }
       .level-step[aria-pressed="true"] > span {
         background: var(--navy);
@@ -1504,19 +1511,17 @@
           line-height: 1.4;
         }
         .level-steps {
+          --level-circle-size: 45px;
           display: grid;
           grid-template-columns: repeat(5, 1fr);
           gap: 7px;
           margin-top: 25px;
         }
         .level-steps:before {
-          top: 23px;
           left: 7%;
           right: 7%;
         }
         .level-step > span {
-          width: 45px;
-          height: 45px;
           font-size: 25px;
           border-width: 2px;
           margin-bottom: 12px;
@@ -1956,14 +1961,10 @@
           font-size: 43px;
         }
         #slide-15 .level-steps {
+          --level-circle-size: 60px;
           margin-top: 19px;
         }
-        #slide-15 .level-steps:before {
-          top: 29px;
-        }
         #slide-15 .level-step > span {
-          width: 60px;
-          height: 60px;
           font-size: 33px;
           margin-bottom: 10px;
         }
