@@ -1,13 +1,15 @@
-import Image from "next/image";
+import { PresentationDetail } from "../presentation-detail";
+import { SdlcQuestionsLink } from "./questions-link";
+import { SlideTail } from "../slide-tail";
 import { SlideLayout } from "../slide-layout";
 /** Этап 05. Аналитик обновляет описание продукта после релиза — содержание слайда. */
 export function Slide09() {
     return (<SlideLayout number={9} variant="content" title={<>
             Этап 05. Аналитик обновляет описание продукта после релиза
-          </>} eyebrow={<>ТЕКУЩИЙ ПРОЦЕСС</>}>
+          </>} eyebrow={<>ТЕКУЩИЙ ПРОЦЕСС / ВНЕДРЯЕМ ПРАКТИКУ</>}>
           <p className="lead small">
-            Изменение вышло в релизе, QA проверил его — описание продукта должно
-            отражать новое поведение.
+            Навык работает; регулярное обновление документации после релизов
+            ещё внедряем. В описание попадает только проверенное поведение.
           </p>
           <div className="delta-layout">
             <div className="delta-doc">
@@ -31,20 +33,8 @@ export function Slide09() {
               <p>Аналитик меняет только<br />затронутые разделы.</p>
             </div>
           </div>
-          <div className="slide-tail">
-            <details open className="detail stage">
-              <summary title="Подробнее" aria-label="Сначала проверить реализацию, затем обновить описание">
-                Сначала проверить реализацию, затем обновить описание<svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 17 17 7 M7 7h10v10"></path>
-                </svg>
-              </summary>
-              <div className="dialog-content">
-                <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                  <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="m6 6 12 12 M18 6 6 18"></path>
-                  </svg>
-                </button>
-                <h2>Сначала проверить реализацию, затем обновить описание</h2>
+          <SlideTail next="Далее: все девять навыков и результаты их работы.">
+            <PresentationDetail title="Сначала проверить реализацию, затем обновить описание" variant="stage">
                 <dl>
                   <dt>Что нужно для работы</dt>
                   <dd>
@@ -74,14 +64,8 @@ export function Slide09() {
                   То, что ещё не реализовано или не проверено, остаётся в
                   требованиях и открытых вопросах.
                 </p>
-              </div>
-            </details>
-            <p className="next-slide">
-              Далее: все девять навыков и результаты их работы.
-            </p>
-          </div>
-          <a className="questions-link" href="https://forms.gle/oyTGxUvNRTSkAe4X9" target="_blank" rel="noopener noreferrer" aria-label="Задать вопрос — открыть Google Форму в новой вкладке">
-            <Image src="/presentations/hrlink/questions-qr.png" width={540} height={540} alt="QR-код формы для вопросов" unoptimized/>
-          </a>
+              </PresentationDetail>
+            </SlideTail>
+          <SdlcQuestionsLink />
         </SlideLayout>);
 }

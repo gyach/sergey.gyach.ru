@@ -1,4 +1,6 @@
-import Image from "next/image";
+import { PresentationDetail } from "../presentation-detail";
+import { SdlcQuestionsLink } from "./questions-link";
+import { SlideTail } from "../slide-tail";
 import { SlideLayout } from "../slide-layout";
 /** Этап 02. Бизнес-аналитик: история согласована с владельцем продукта — содержание слайда. */
 export function Slide05() {
@@ -42,20 +44,8 @@ export function Slide05() {
             <code>hrl-humanizer</code> убирает тяжёлые и двусмысленные обороты,
             не меняя смысла истории.
           </p>
-          <div className="slide-tail">
-            <details open className="detail stage">
-              <summary title="Подробнее" aria-label="Как бизнес-аналитик готовит историю">
-                Как бизнес-аналитик готовит историю<svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 17 17 7 M7 7h10v10"></path>
-                </svg>
-              </summary>
-              <div className="dialog-content">
-                <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                  <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="m6 6 12 12 M18 6 6 18"></path>
-                  </svg>
-                </button>
-                <h2>Как бизнес-аналитик готовит историю</h2>
+          <SlideTail next="Далее: как системный аналитик превращает историю в техническую постановку.">
+            <PresentationDetail title="Как бизнес-аналитик готовит историю" variant="stage">
                 <dl>
                   <dt>Что нужно для работы</dt>
                   <dd>
@@ -92,15 +82,8 @@ export function Slide05() {
                   и чего хочет добиться, что мешает сейчас и что должно стать
                   иначе. Историю можно заказать отдельно, не проходя всю карту.
                 </p>
-              </div>
-            </details>
-            <p className="next-slide">
-              Далее: как системный аналитик превращает историю в техническую
-              постановку.
-            </p>
-          </div>
-          <a className="questions-link" href="https://forms.gle/oyTGxUvNRTSkAe4X9" target="_blank" rel="noopener noreferrer" aria-label="Задать вопрос — открыть Google Форму в новой вкладке">
-            <Image src="/presentations/hrlink/questions-qr.png" width={540} height={540} alt="QR-код формы для вопросов" unoptimized/>
-          </a>
+              </PresentationDetail>
+            </SlideTail>
+          <SdlcQuestionsLink />
         </SlideLayout>);
 }

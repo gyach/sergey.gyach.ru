@@ -1,3 +1,4 @@
+import { autonomyLevels } from "./autonomy-levels";
 type SheetCell = {
     v?: string | number | null;
 };
@@ -510,54 +511,10 @@ export function mountPresentation() {
             go(-1);
         }
     });
-    const levelData = [
-        [
-            "0",
-            "Без AI",
-            "Аналитик, разработчик и QA сами выполняют работу и передают её дальше",
-            "Не участвует",
-            "Человек выполняет все этапы",
-        ],
-        [
-            "1",
-            "AI-чат",
-            "Сотрудник задаёт вопросы, передаёт материалы в чат и использует ответ",
-            "Подсказывает и помогает с черновиком",
-            "Человек сам переносит результат в рабочие инструменты",
-        ],
-        [
-            "2",
-            "Локальный агент",
-            "Сотрудник ставит задачу и управляет агентом на своём устройстве",
-            "Работает с доступными файлами и инструментами сотрудника",
-            "Агент помогает каждой роли, но работа ещё зависит от её локального окружения",
-        ],
-        [
-            "3",
-            "Фоновый агент",
-            "Сотрудник направляет работу и подключается, если есть вопросы или что-то пошло не так",
-            "Выполняет задачи в отдельной среде, независимо от ноутбука сотрудника",
-            "Агент работает без постоянного участия человека. Как передавать контекст и результаты между этапами, ещё нужно согласовать",
-        ],
-        [
-            "4",
-            "Автономный цикл",
-            "Люди задают цели и наблюдают за результатом",
-            "Выполняет весь цикл работы в пределах, которые мы задали",
-            "Система сама выполняет, проверяет и исправляет работу",
-        ],
-    ];
     const roleWork = [
         "Работает с требованиями и источниками.",
         "Работает с кодом и инструментами.",
         "Работает с проверками и результатами.",
-    ];
-    const executors = [
-        "Человек",
-        "Человек + AI-чат",
-        "Локальный агент",
-        "Фоновый агент",
-        "Агенты в автономном цикле",
     ];
     /** Обновляет описание работы ролей для выбранного уровня 0–4. */
     function setLevel(i: number) {
@@ -565,12 +522,12 @@ export function mountPresentation() {
             .querySelectorAll<HTMLButtonElement>(".level-step")
             .forEach((b, n) => b.setAttribute("aria-pressed", String(i === n)));
         byId("level-name").textContent =
-            i + " · " + levelData[i][1];
-        byId("level-human").textContent = levelData[i][2];
-        byId("level-change").textContent = levelData[i][4];
+            i + " · " + autonomyLevels[i].name;
+        byId("level-human").textContent = autonomyLevels[i].human;
+        byId("level-change").textContent = autonomyLevels[i].change;
         document
             .querySelectorAll(".executor")
-            .forEach((x) => (x.textContent = executors[i]));
+            .forEach((x) => (x.textContent = autonomyLevels[i].executor));
         document
             .querySelectorAll<HTMLElement>(".role-action")
             .forEach((x, n) => (x.textContent =
@@ -643,8 +600,10 @@ export function mountPresentation() {
     root.classList.add("js");
     showSlide();
     if (document.fonts && document.fonts.ready)
-        document.fonts.ready.then(() => { if (!abort.signal.aborted)
-            fitSlide(); });
+        document.fonts.ready.then(() => {
+            if (!abort.signal.aborted)
+                fitSlide();
+        });
     return () => {
         abort.abort();
         questionView.active = false;

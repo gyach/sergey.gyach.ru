@@ -1,4 +1,6 @@
-import Image from "next/image";
+import { PresentationDetail } from "../presentation-detail";
+import { SdlcQuestionsLink } from "./questions-link";
+import { SlideTail } from "../slide-tail";
 import { SlideLayout } from "../slide-layout";
 /** Этап 01. Дискавери: от идеи к понятному запросу — содержание слайда. */
 export function Slide04() {
@@ -46,20 +48,8 @@ export function Slide04() {
             Если данных не хватает, агент записывает открытые вопросы и
             объясняет, на что они влияют.
           </p>
-          <div className="slide-tail">
-            <details open className="detail stage">
-              <summary title="Подробнее" aria-label="Кто за что отвечает в дискавери">
-                Кто за что отвечает в дискавери<svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 17 17 7 M7 7h10v10"></path>
-                </svg>
-              </summary>
-              <div className="dialog-content">
-                <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                  <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="m6 6 12 12 M18 6 6 18"></path>
-                  </svg>
-                </button>
-                <h2>Кто за что отвечает в дискавери</h2>
+          <SlideTail next="Далее: как бизнес-аналитик оформляет решение в историю.">
+            <PresentationDetail title="Кто за что отвечает в дискавери" variant="stage">
                 <dl>
                   <dt>Что нужно для работы</dt>
                   <dd>
@@ -102,14 +92,17 @@ export function Slide04() {
                   именно предстоит изменить. Бизнес-аналитик подключается на
                   этапе 02.
                 </p>
-              </div>
-            </details>
-            <p className="next-slide">
-              Далее: как бизнес-аналитик оформляет решение в историю.
-            </p>
-          </div>
-          <a className="questions-link" href="https://forms.gle/oyTGxUvNRTSkAe4X9" target="_blank" rel="noopener noreferrer" aria-label="Задать вопрос — открыть Google Форму в новой вкладке">
-            <Image src="/presentations/hrlink/questions-qr.png" width={540} height={540} alt="QR-код формы для вопросов" unoptimized/>
-          </a>
+                <h3>Как не перенести ошибку агента во всю постановку?</h3>
+                <p>
+                  Ошибка в трактовке кода на дискавери может стать основанием
+                  для неверного концепта. Предлагаем определить, какие
+                  технические выводы нужно подтверждать со специалистом до
+                  согласования решения. Общий порядок такой проверки пока
+                  не согласован; неподтверждённые выводы остаются открытыми
+                  вопросами.
+                </p>
+              </PresentationDetail>
+            </SlideTail>
+          <SdlcQuestionsLink />
         </SlideLayout>);
 }

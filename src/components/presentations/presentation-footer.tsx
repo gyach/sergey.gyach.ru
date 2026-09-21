@@ -1,21 +1,11 @@
+import { PresentationDetail } from "./presentation-detail";
+import { ControlIcon } from "./presentation-icons";
 /** Навигация и оглавление презентации SDLC. */
 export function PresentationFooter() {
     return (<footer className="footer">
       <div className="footer-left">
         <a href="#slide-03" title="Карта процесса">Карта процесса</a>
-        <details open className="detail">
-          <summary title="Подробнее" aria-label="18 слайдов · оглавление">
-            Оглавление<svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 17 17 7 M7 7h10v10"></path>
-            </svg>
-          </summary>
-          <div className="dialog-content">
-            <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-              <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="m6 6 12 12 M18 6 6 18"></path>
-              </svg>
-            </button>
-            <h2>18 слайдов · оглавление</h2>
+        <PresentationDetail title="18 слайдов · оглавление" summary="Оглавление">
             <ol className="contents-list">
               <li>
                 <a href="#slide-01"><span>01</span>Текущий SDLC на пути к Dark Factory</a>
@@ -43,7 +33,7 @@ export function PresentationFooter() {
                 <a href="#slide-07"><span>07</span>Этап 03. Передача задачи в разработку и публикация</a>
               </li>
               <li>
-                <a href="#slide-08"><span>08</span>Этап 04. Здесь цепочка навыков прерывается</a>
+                <a href="#slide-08"><span>08</span>Этап 04. Единую цепочку навыков ещё предстоит собрать</a>
               </li>
               <li>
                 <a href="#slide-09"><span>09</span>Этап 05. Аналитик обновляет описание продукта
@@ -83,25 +73,19 @@ export function PresentationFooter() {
               Стрелки ← → переключают слайды. Escape закрывает окно с
               подробностями. Пока окно открыто, стрелки не переключают слайд.
             </p>
-          </div>
-        </details>
+          </PresentationDetail>
         <button id="fullscreen" type="button" title="Полный экран" aria-pressed="false">
-          Полный экран<svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M8 3H3v5 M16 3h5v5 M3 16v5h5 M21 16v5h-5"></path>
-          </svg>
+          Полный экран<ControlIcon name="fullscreen"/>
         </button>
       </div>
       <span className="footer-note">HRLINK · ОТ ЗАПРОСА К АВТОНОМНОСТИ</span>
       <nav className="prevnext" aria-label="Навигация">
         <span className="separator"></span>
         <button id="prev" type="button" title="Назад">
-          <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="m14 6-6 6 6 6"></path></svg>Назад
+          <ControlIcon name="previous"/>Назад
         </button>
         <button id="next" type="button" title="Далее">
-          Далее<svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="m10 6 6 6-6 6"></path>
-          </svg></button><span className="counter" aria-live="polite">01 / 18</span>
+          Далее<ControlIcon name="next"/></button><span className="counter" aria-live="polite">01 / 18</span>
       </nav>
     </footer>);
 }

@@ -1,4 +1,6 @@
-import Image from "next/image";
+import { PresentationDetail } from "../presentation-detail";
+import { SdlcQuestionsLink } from "./questions-link";
+import { SlideTail } from "../slide-tail";
 import { SlideLayout } from "../slide-layout";
 /** Девять навыков: что каждый принимает и отдаёт — содержание слайда. */
 export function Slide10() {
@@ -28,20 +30,8 @@ export function Slide10() {
           <p className="callout takeaway">
             Человек ставит задачу, принимает решения и проверяет результат.
           </p>
-          <div className="slide-tail">
-            <details open className="detail">
-              <summary title="Подробнее" aria-label="Что умеют девять навыков">
-                Что умеют девять навыков<svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 17 17 7 M7 7h10v10"></path>
-                </svg>
-              </summary>
-              <div className="dialog-content">
-                <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                  <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="m6 6 12 12 M18 6 6 18"></path>
-                  </svg>
-                </button>
-                <h2>Что умеют девять навыков</h2>
+          <SlideTail next="Далее: что предстоит наладить в процессе.">
+            <PresentationDetail title="Что умеют девять навыков">
                 <div className="skill-directory">
                   <article>
                     <code>hrl-explore</code>
@@ -160,12 +150,8 @@ export function Slide10() {
                   Агент помогает заметить пропуски и посмотреть на постановку с
                   разных сторон. Мы решаем, какие замечания принять, и отвечаем за результат.
                 </p>
-              </div>
-            </details>
-            <p className="next-slide">Далее: что предстоит наладить в процессе.</p>
-          </div>
-          <a className="questions-link" href="https://forms.gle/oyTGxUvNRTSkAe4X9" target="_blank" rel="noopener noreferrer" aria-label="Задать вопрос — открыть Google Форму в новой вкладке">
-            <Image src="/presentations/hrlink/questions-qr.png" width={540} height={540} alt="QR-код формы для вопросов" unoptimized/>
-          </a>
+              </PresentationDetail>
+            </SlideTail>
+          <SdlcQuestionsLink />
         </SlideLayout>);
 }

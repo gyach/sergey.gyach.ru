@@ -1,4 +1,5 @@
-import Image from "next/image";
+import { SdlcQuestionsLink } from "./questions-link";
+import { SlideTail } from "../slide-tail";
 import { SlideLayout, ComparisonLayout } from "../slide-layout";
 /** Что было и что изменилось — содержание слайда. */
 export function Slide02() {
@@ -39,8 +40,8 @@ export function Slide02() {
                 чек-листам, собранным из типовых ошибок прошлых постановок
               </p>
               <p>
-                Аналитик обновляет описание текущего поведения продукта после
-                каждого проверенного изменения
+                Создан навык описания текущего поведения продукта;
+                регулярное применение после релизов ещё внедряем
               </p>
             </div>
           </ComparisonLayout>
@@ -48,13 +49,7 @@ export function Slide02() {
             Время подготовки постановки и объём ручных правок мы пока не измеряем.
             Способ оценки обсудим вместе с проблемами внедрения (слайд 13).
           </p>
-          <div className="slide-tail">
-            <p className="next-slide">
-              Далее: Как это устроено — по пяти этапам, начиная с запроса.
-            </p>
-          </div>
-          <a className="questions-link" href="https://forms.gle/oyTGxUvNRTSkAe4X9" target="_blank" rel="noopener noreferrer" aria-label="Задать вопрос — открыть Google Форму в новой вкладке">
-            <Image src="/presentations/hrlink/questions-qr.png" width={540} height={540} alt="QR-код формы для вопросов" unoptimized/>
-          </a>
+          <SlideTail next="Далее: Как это устроено — по пяти этапам, начиная с запроса." />
+          <SdlcQuestionsLink />
         </SlideLayout>);
 }

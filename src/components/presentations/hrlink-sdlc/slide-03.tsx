@@ -1,4 +1,7 @@
-import Image from "next/image";
+import { PresentationDetail } from "../presentation-detail";
+import { SdlcQuestionsLink } from "./questions-link";
+import { SlideTail } from "../slide-tail";
+import { ControlIcon } from "../presentation-icons";
 import { SlideLayout } from "../slide-layout";
 /** Пять этапов: от запроса до знаний о продукте — содержание слайда. */
 export function Slide03() {
@@ -12,8 +15,7 @@ export function Slide03() {
               <p>Владелец продукта + дизайнер</p>
               <p className="muted">Проблема, факты и объём работы</p>
               <p className="skill-label">hrl-explore · hrl-discovery · hrl-wtf</p>
-              <a className="pill dark" href="#slide-04">К слайду 04<svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="m10 6 6 6-6 6"></path></svg></a>
+              <a className="pill dark" href="#slide-04">К слайду 04<ControlIcon name="next"/></a>
             </article>
             <article className="map-node">
               <span className="node-number">02</span>
@@ -21,8 +23,7 @@ export function Slide03() {
               <p>Бизнес-аналитик + системный аналитик + дизайнер</p>
               <p className="muted">История → техническая постановка → задачи</p>
               <p className="skill-label">hrl-analyze · hrl-humanizer · hrl-wtf</p>
-              <a className="pill dark" href="#slide-05">К слайдам 05–06<svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="m10 6 6 6-6 6"></path></svg></a>
+              <a className="pill dark" href="#slide-05">К слайдам 05–06<ControlIcon name="next"/></a>
             </article>
             <article className="map-node">
               <span className="node-number">03</span>
@@ -34,8 +35,7 @@ export function Slide03() {
               <p className="skill-label">
                 hrl-analyze · hrl-atlassian · hrl-publish
               </p>
-              <a className="pill dark" href="#slide-07">К слайду 07<svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="m10 6 6 6-6 6"></path></svg></a>
+              <a className="pill dark" href="#slide-07">К слайду 07<ControlIcon name="next"/></a>
             </article>
             <article className="map-node">
               <span className="node-number">04</span>
@@ -45,8 +45,7 @@ export function Slide03() {
               <p className="skill-label">
                 Общий набор навыков ещё предстоит собрать
               </p>
-              <a className="pill dark" href="#slide-08">К слайду 08<svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="m10 6 6 6-6 6"></path></svg></a>
+              <a className="pill dark" href="#slide-08">К слайду 08<ControlIcon name="next"/></a>
             </article>
             <article className="map-node">
               <span className="node-number">05</span>
@@ -57,24 +56,11 @@ export function Slide03() {
                 регулярна
               </p>
               <p className="skill-label">hrl-living-specs · hrl-retrospect</p>
-              <a className="pill dark" href="#slide-09">К слайдам 09 и 12<svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="m10 6 6 6-6 6"></path></svg></a>
+              <a className="pill dark" href="#slide-09">К слайдам 09 и 12<ControlIcon name="next"/></a>
             </article>
           </div>
-          <div className="slide-tail">
-            <details open className="detail stage">
-              <summary title="Подробнее" aria-label="Как связаны этапы">
-                Как связаны этапы<svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 17 17 7 M7 7h10v10"></path>
-                </svg>
-              </summary>
-              <div className="dialog-content">
-                <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                  <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="m6 6 12 12 M18 6 6 18"></path>
-                  </svg>
-                </button>
-                <h2>Как связаны этапы</h2>
+          <SlideTail next="Далее: дискавери — от идеи к понятному запросу.">
+            <PresentationDetail title="Как связаны этапы" variant="stage">
                 <p>
                   Каждый этап отвечает на три вопроса: с чего начать, что
                   получить и кто за это отвечает. Дальше слайды раскрывают
@@ -100,14 +86,8 @@ export function Slide03() {
                   разработки и QA будут передавать друг другу данные, ещё
                   предстоит согласовать.
                 </p>
-              </div>
-            </details>
-            <p className="next-slide">
-              Далее: дискавери — от идеи к понятному запросу.
-            </p>
-          </div>
-          <a className="questions-link" href="https://forms.gle/oyTGxUvNRTSkAe4X9" target="_blank" rel="noopener noreferrer" aria-label="Задать вопрос — открыть Google Форму в новой вкладке">
-            <Image src="/presentations/hrlink/questions-qr.png" width={540} height={540} alt="QR-код формы для вопросов" unoptimized/>
-          </a>
+              </PresentationDetail>
+            </SlideTail>
+          <SdlcQuestionsLink />
         </SlideLayout>);
 }

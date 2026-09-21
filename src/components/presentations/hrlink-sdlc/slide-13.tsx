@@ -1,4 +1,6 @@
-import Image from "next/image";
+import { PresentationDetail } from "../presentation-detail";
+import { SdlcQuestionsLink } from "./questions-link";
+import { SlideTail } from "../slide-tail";
 import { SlideLayout } from "../slide-layout";
 /** Десять проблем внедрения и что с ними делать — содержание слайда. */
 export function Slide13() {
@@ -12,19 +14,7 @@ export function Slide13() {
           <div className="problem-grid">
             <div className="problem-group">
               <span className="group-label">1 · Текст и постановка · этапы 02–03</span>
-              <details open className="detail problem">
-                <summary title="Подробнее" aria-label="1.1 · Вода и неточные формулировки">
-                  <span className="problem-id">1.1</span><span><b>Вода и неточные формулировки</b><small>Улучшать навык через накопленные выводы и ретроспективу</small></span><svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 17 17 7 M7 7h10v10"></path>
-                  </svg>
-                </summary>
-                <div className="dialog-content">
-                  <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                    <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="m6 6 12 12 M18 6 6 18"></path>
-                    </svg>
-                  </button>
-                  <h2>1.1 · Вода и неточные формулировки</h2>
+              <PresentationDetail title="1.1 · Вода и неточные формулировки" variant="problem" summary={<><span className="problem-id">1.1</span><span><b>Вода и неточные формулировки</b><small>Улучшать навык через накопленные выводы и ретроспективу</small></span></>}>
 
                   <h3>Что мешает работе</h3>
                   <p>
@@ -37,7 +27,7 @@ export function Slide13() {
                     Аналитик сохраняет ответ агента, материалы задачи, версию
                     навыка и свою правку. Владелец навыка разбирает различия с
                     помощью hrl-retrospect, записывает выводы в журнал навыка, уточняет инструкцию и снова проверяет исходный запрос — так
-                    навык обучается итерационно. В материалах должны быть
+                    мы итерационно улучшаем инструкции. В материалах должны быть
                     источники, согласованный объём работы и принятые решения.
                   </p>
                   <h3>Кто может взять на себя</h3>
@@ -48,22 +38,9 @@ export function Slide13() {
                     сколько времени уходит на ручную доработку до и после
                     изменения.
                   </p>
-                </div>
-              </details>
-              <details open className="detail problem">
-                <summary title="Подробнее" aria-label="1.2 · Слишком много мелких задач">
-                  <span className="problem-id">1.2</span><span><b>Слишком много мелких задач</b><small>Давать обратную связь и итерационно улучшать подход к
-                      декомпозиции</small></span><svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 17 17 7 M7 7h10v10"></path>
-                  </svg>
-                </summary>
-                <div className="dialog-content">
-                  <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                    <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="m6 6 12 12 M18 6 6 18"></path>
-                    </svg>
-                  </button>
-                  <h2>1.2 · Слишком много мелких задач</h2>
+                </PresentationDetail>
+              <PresentationDetail title="1.2 · Слишком много мелких задач" variant="problem" summary={<><span className="problem-id">1.2</span><span><b>Слишком много мелких задач</b><small>Давать обратную связь и итерационно улучшать подход к
+                      декомпозиции</small></span></>}>
 
                   <h3>Что мешает работе</h3>
                   <p>
@@ -87,21 +64,8 @@ export function Slide13() {
                     входит. Участники отмечают, какие повторы убрали и какие
                     замечания раньше терялись при чтении.
                   </p>
-                </div>
-              </details>
-              <details open className="detail problem">
-                <summary title="Подробнее" aria-label="1.3 · Трудно читать и находить требования">
-                  <span className="problem-id">1.3</span><span><b>Трудно читать и находить требования</b><small>Проверить, удобно ли читать постановку</small></span><svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 17 17 7 M7 7h10v10"></path>
-                  </svg>
-                </summary>
-                <div className="dialog-content">
-                  <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                    <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="m6 6 12 12 M18 6 6 18"></path>
-                    </svg>
-                  </button>
-                  <h2>1.3 · Трудно читать и находить требования</h2>
+                </PresentationDetail>
+              <PresentationDetail title="1.3 · Трудно читать и находить требования" variant="problem" summary={<><span className="problem-id">1.3</span><span><b>Трудно читать и находить требования</b><small>Проверить, удобно ли читать постановку</small></span></>}>
 
                   <h3>Что мешает работе</h3>
                   <p>
@@ -122,21 +86,8 @@ export function Slide13() {
                     Участники находят нужные сведения. Аналитик записал и
                     устранил непонятные фрагменты и ошибки отображения.
                   </p>
-                </div>
-              </details>
-              <details open className="detail problem">
-                <summary title="Подробнее" aria-label="1.4 · Разные ожидания от шаблона">
-                  <span className="problem-id">1.4</span><span><b>Разные ожидания от шаблона</b><small>Согласовать базовый шаблон</small></span><svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 17 17 7 M7 7h10v10"></path>
-                  </svg>
-                </summary>
-                <div className="dialog-content">
-                  <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                    <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="m6 6 12 12 M18 6 6 18"></path>
-                    </svg>
-                  </button>
-                  <h2>1.4 · Разные ожидания от шаблона</h2>
+                </PresentationDetail>
+              <PresentationDetail title="1.4 · Разные ожидания от шаблона" variant="problem" summary={<><span className="problem-id">1.4</span><span><b>Разные ожидания от шаблона</b><small>Согласовать базовый шаблон</small></span></>}>
 
                   <h3>Что мешает работе</h3>
                   <p>
@@ -159,24 +110,11 @@ export function Slide13() {
                     разделов. Новые просьбы изменить структуру попадают в
                     отдельный список для обсуждения.
                   </p>
-                </div>
-              </details>
+                </PresentationDetail>
             </div>
             <div className="problem-group">
               <span className="group-label">2 · Люди и обратная связь · все этапы</span>
-              <details open className="detail problem">
-                <summary title="Подробнее" aria-label="2.1 · Страх утратить компетенции">
-                  <span className="problem-id">2.1</span><span><b>Страх утратить компетенции</b><small>Самостоятельно разбирать и защищать решения</small></span><svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 17 17 7 M7 7h10v10"></path>
-                  </svg>
-                </summary>
-                <div className="dialog-content">
-                  <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                    <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="m6 6 12 12 M18 6 6 18"></path>
-                    </svg>
-                  </button>
-                  <h2>2.1 · Страх утратить компетенции</h2>
+              <PresentationDetail title="2.1 · Страх утратить компетенции" variant="problem" summary={<><span className="problem-id">2.1</span><span><b>Страх утратить компетенции</b><small>Самостоятельно разбирать и защищать решения</small></span></>}>
 
                   <h3>Что мешает работе</h3>
                   <p>
@@ -198,21 +136,8 @@ export function Slide13() {
                     Коллеги обсуждают содержание, а их замечания помогают
                     улучшить дальнейшую работу.
                   </p>
-                </div>
-              </details>
-              <details open className="detail problem">
-                <summary title="Подробнее" aria-label="2.2 · Непонятно, что стало с замечаниями">
-                  <span className="problem-id">2.2</span><span><b>Непонятно, что стало с замечаниями</b><small>Регулярно показывать, что решили и исправили</small></span><svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 17 17 7 M7 7h10v10"></path>
-                  </svg>
-                </summary>
-                <div className="dialog-content">
-                  <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                    <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="m6 6 12 12 M18 6 6 18"></path>
-                    </svg>
-                  </button>
-                  <h2>2.2 · Непонятно, что стало с замечаниями</h2>
+                </PresentationDetail>
+              <PresentationDetail title="2.2 · Непонятно, что стало с замечаниями" variant="problem" summary={<><span className="problem-id">2.2</span><span><b>Непонятно, что стало с замечаниями</b><small>Регулярно показывать, что решили и исправили</small></span></>}>
 
                   <h3>Что мешает работе</h3>
                   <p>
@@ -236,21 +161,8 @@ export function Slide13() {
                     оставивший замечание, проверил, что исправление помогло;
                     одной отметки о внесённой правке недостаточно.
                   </p>
-                </div>
-              </details>
-              <details open className="detail problem">
-                <summary title="Подробнее" aria-label="2.3 · Недоверие и внутреннее сопротивление">
-                  <span className="problem-id">2.3</span><span><b>Недоверие и внутреннее сопротивление</b><small>Проводить мастер-классы и воркшопы</small></span><svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 17 17 7 M7 7h10v10"></path>
-                  </svg>
-                </summary>
-                <div className="dialog-content">
-                  <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                    <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="m6 6 12 12 M18 6 6 18"></path>
-                    </svg>
-                  </button>
-                  <h2>2.3 · Недоверие и внутреннее сопротивление</h2>
+                </PresentationDetail>
+              <PresentationDetail title="2.3 · Недоверие и внутреннее сопротивление" variant="problem" summary={<><span className="problem-id">2.3</span><span><b>Недоверие и внутреннее сопротивление</b><small>Проводить мастер-классы и воркшопы</small></span></>}>
 
                   <h3>Что мешает работе</h3>
                   <p>
@@ -275,24 +187,11 @@ export function Slide13() {
                     замечаниям есть ответы, которые можно проверить. Мы
                     сравниваем время работы и объём переделок.
                   </p>
-                </div>
-              </details>
+                </PresentationDetail>
             </div>
             <div className="problem-group">
               <span className="group-label">3 · Инструменты · этап 03</span>
-              <details open className="detail problem">
-                <summary title="Подробнее" aria-label="3.1 · Сложно работать с Git">
-                  <span className="problem-id">3.1</span><span><b>Сложно работать с Git</b><small>Разобрать небольшую правку от начала до публикации</small></span><svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 17 17 7 M7 7h10v10"></path>
-                  </svg>
-                </summary>
-                <div className="dialog-content">
-                  <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                    <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="m6 6 12 12 M18 6 6 18"></path>
-                    </svg>
-                  </button>
-                  <h2>3.1 · Сложно работать с Git</h2>
+              <PresentationDetail title="3.1 · Сложно работать с Git" variant="problem" summary={<><span className="problem-id">3.1</span><span><b>Сложно работать с Git</b><small>Разобрать небольшую правку от начала до публикации</small></span></>}>
 
                   <h3>Что мешает работе</h3>
                   <p>
@@ -315,21 +214,8 @@ export function Slide13() {
                     время публикации небольшой правки и число обращений за
                     помощью.
                   </p>
-                </div>
-              </details>
-              <details open className="detail problem">
-                <summary title="Подробнее" aria-label="3.2 · Расхождение Git и Confluence">
-                  <span className="problem-id">3.2</span><span><b>Расхождение Git и Confluence</b><small>Считать мастер-данными только Git</small></span><svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 17 17 7 M7 7h10v10"></path>
-                  </svg>
-                </summary>
-                <div className="dialog-content">
-                  <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                    <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="m6 6 12 12 M18 6 6 18"></path>
-                    </svg>
-                  </button>
-                  <h2>3.2 · Расхождение Git и Confluence</h2>
+                </PresentationDetail>
+              <PresentationDetail title="3.2 · Расхождение Git и Confluence" variant="problem" summary={<><span className="problem-id">3.2</span><span><b>Расхождение Git и Confluence</b><small>Считать мастер-данными только Git</small></span></>}>
 
                   <h3>Что мешает работе</h3>
                   <p>
@@ -350,21 +236,8 @@ export function Slide13() {
                     Выбранные страницы показывают принятый текст из Git. Все
                     новые правки мы вносим через тот же исходный файл.
                   </p>
-                </div>
-              </details>
-              <details open className="detail problem">
-                <summary title="Подробнее" aria-label="3.3 · Сбои публикации в Confluence">
-                  <span className="problem-id">3.3</span><span><b>Сбои публикации в Confluence</b><small>Оперативно сообщать о сбоях и устранять их</small></span><svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 17 17 7 M7 7h10v10"></path>
-                  </svg>
-                </summary>
-                <div className="dialog-content">
-                  <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                    <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="m6 6 12 12 M18 6 6 18"></path>
-                    </svg>
-                  </button>
-                  <h2>3.3 · Сбои публикации в Confluence</h2>
+                </PresentationDetail>
+              <PresentationDetail title="3.3 · Сбои публикации в Confluence" variant="problem" summary={<><span className="problem-id">3.3</span><span><b>Сбои публикации в Confluence</b><small>Оперативно сообщать о сбоях и устранять их</small></span></>}>
 
                   <h3>Что мешает работе</h3>
                   <p>
@@ -390,24 +263,11 @@ export function Slide13() {
                     Страница показывает нужную версию файла. Повторная
                     публикация при тех же условиях проходит без сбоя.
                   </p>
-                </div>
-              </details>
+                </PresentationDetail>
             </div>
           </div>
-          <div className="slide-tail">
-            <details open className="detail stage">
-              <summary title="Подробнее" aria-label="Как работать с проблемами">
-                Как работать с проблемами<svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 17 17 7 M7 7h10v10"></path>
-                </svg>
-              </summary>
-              <div className="dialog-content">
-                <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                  <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="m6 6 12 12 M18 6 6 18"></path>
-                  </svg>
-                </button>
-                <h2>Как работать с проблемами</h2>
+          <SlideTail next="Далее: единая цепочка навыков аналитики, разработки и тестирования.">
+            <PresentationDetail title="Как работать с проблемами" variant="stage">
                 <p>
                   Три группы требуют разного подхода.
                   <b>1. Текст и постановка</b> — то, что читатель видит в самих
@@ -430,15 +290,8 @@ export function Slide13() {
                   сейчас, затем пробуем изменение и оцениваем, помогло ли оно.
                   Всё перечисленное пока остаётся планом.
                 </p>
-              </div>
-            </details>
-            <p className="next-slide">
-              Далее: единая цепочка навыков аналитики, разработки и
-              тестирования.
-            </p>
-          </div>
-          <a className="questions-link" href="https://forms.gle/oyTGxUvNRTSkAe4X9" target="_blank" rel="noopener noreferrer" aria-label="Задать вопрос — открыть Google Форму в новой вкладке">
-            <Image src="/presentations/hrlink/questions-qr.png" width={540} height={540} alt="QR-код формы для вопросов" unoptimized/>
-          </a>
+              </PresentationDetail>
+            </SlideTail>
+          <SdlcQuestionsLink />
         </SlideLayout>);
 }

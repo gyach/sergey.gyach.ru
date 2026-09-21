@@ -1,4 +1,6 @@
-import Image from "next/image";
+import { PresentationDetail } from "../presentation-detail";
+import { SdlcQuestionsLink } from "./questions-link";
+import { SlideTail } from "../slide-tail";
 import { SlideLayout } from "../slide-layout";
 /** Этап 02. Системный аналитик: техническая постановка согласована с архитектором — содержание слайда. */
 export function Slide06() {
@@ -8,8 +10,9 @@ export function Slide06() {
           </>} eyebrow={<>ТЕКУЩИЙ ПРОЦЕСС</>}>
           <p className="lead small">
             Системный аналитик вместе с агентом превращает историю в техническую
-            постановку и декомпозированные задачи для разработчика. До согласования агент проводит ревью по чек-листам ролей SA, ARCH и QA
-            и указывает недоработки.
+            постановку и задачи. Агент проверяет их в ролях SA, ARCH и QA.
+            Состав задач можно менять: аналитик и разработчик согласуют
+            декомпозицию до передачи в работу.
           </p>
           <div className="trace-flow">
             <div>
@@ -39,20 +42,8 @@ export function Slide06() {
             <span>Системный аналитик · hrl-analyze</span><b>История → требования → задачи → ревью по чек-листам →
               согласование</b>
           </div>
-          <div className="slide-tail">
-            <details open className="detail stage">
-              <summary title="Подробнее" aria-label="Как системный аналитик готовит техническую постановку">
-                Как системный аналитик готовит техническую постановку<svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 17 17 7 M7 7h10v10"></path>
-                </svg>
-              </summary>
-              <div className="dialog-content">
-                <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                  <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="m6 6 12 12 M18 6 6 18"></path>
-                  </svg>
-                </button>
-                <h2>Как системный аналитик готовит техническую постановку</h2>
+          <SlideTail next="Далее: передача задачи в разработку и публикация.">
+            <PresentationDetail title="Как системный аналитик готовит техническую постановку" variant="stage">
                 <dl>
                   <dt>Что нужно для работы</dt>
                   <dd>
@@ -96,14 +87,16 @@ export function Slide06() {
                   описано будущее поведение. При тестировании QA проверяет,
                   работает ли готовый продукт так, как задумано.
                 </p>
-              </div>
-            </details>
-            <p className="next-slide">
-              Далее: передача задачи в разработку и публикация.
-            </p>
-          </div>
-          <a className="questions-link" href="https://forms.gle/oyTGxUvNRTSkAe4X9" target="_blank" rel="noopener noreferrer" aria-label="Задать вопрос — открыть Google Форму в новой вкладке">
-            <Image src="/presentations/hrlink/questions-qr.png" width={540} height={540} alt="QR-код формы для вопросов" unoptimized/>
-          </a>
+                <h3>Что делать, если декомпозиция неудобна?</h3>
+                <p>
+                  Разработчик предлагает другой состав задач и обсуждает его
+                  с аналитиком. Для улучшения навыка нужны конкретный пример,
+                  предложенное разбиение и его обоснование. Для фронтенда
+                  можно опираться на правила команды и эталонные задачи;
+                  общей согласованной схемы пока нет.
+                </p>
+              </PresentationDetail>
+            </SlideTail>
+          <SdlcQuestionsLink />
         </SlideLayout>);
 }

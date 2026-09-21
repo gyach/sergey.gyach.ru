@@ -1,3 +1,5 @@
+import { PresentationDetail } from "../presentation-detail";
+import { SdlcQuestionsLink } from "./questions-link";
 import Image from "next/image";
 import { SlideLayout } from "../slide-layout";
 /** Текущий SDLC на пути к Dark Factory* — содержание слайда. */
@@ -27,19 +29,7 @@ export function Slide01() {
           <div className="cover-meta">
             <p className="cover-caption">9 навыков <span>·</span> 5 этапов SDLC</p>
           </div>
-          <details open className="detail stage">
-            <summary title="Подробнее" aria-label="Как читать презентацию">
-              Как читать презентацию<svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7 17 17 7 M7 7h10v10"></path>
-              </svg>
-            </summary>
-            <div className="dialog-content">
-              <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="m6 6 12 12 M18 6 6 18"></path>
-                </svg>
-              </button>
-              <h2>Как читать презентацию</h2>
+          <PresentationDetail title="Как читать презентацию" variant="stage">
               <p>
                 SDLC — весь путь изменения продукта: от запроса до разработки,
                 проверки и обновления знаний. Здесь показано, как навыки
@@ -57,8 +47,7 @@ export function Slide01() {
                 QA ещё предстоит построить. Слайд 17 показывает вопросы
                 участников, слайд 18 — контакты автора.
               </p>
-            </div>
-          </details>
+            </PresentationDetail>
           <p className="cover-caption cover-footnote" id="cover-footnote">
             <sup className="fn-mark" aria-hidden="true">*</sup>Dark Factory — работа
             без участия человека в самих операциях: люди задают цели и границы,
@@ -70,8 +59,6 @@ export function Slide01() {
               <strong>Гяч Сергей</strong><span className="cover-author-role">Руководитель отдела аналитики HRlink</span><time id="presentation-date"></time>
             </div>
           </div>
-          <a className="questions-link" href="https://forms.gle/oyTGxUvNRTSkAe4X9" target="_blank" rel="noopener noreferrer" aria-label="Задать вопрос — открыть Google Форму в новой вкладке">
-            <Image src="/presentations/hrlink/questions-qr.png" width={540} height={540} alt="QR-код формы для вопросов" unoptimized/>
-          </a>
+          <SdlcQuestionsLink />
         </SlideLayout>);
 }

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SdlcQuestionsLink } from "./questions-link";
 import { SlideLayout } from "../slide-layout";
 /** Вопросы участников — содержание слайда. */
 export function Slide17() {
@@ -19,8 +19,6 @@ export function Slide17() {
             </nav>
           </div>
           <p className="next-slide">Далее: контакты автора.</p>
-          <a className="questions-link" href="https://forms.gle/oyTGxUvNRTSkAe4X9" target="_blank" rel="noopener noreferrer" aria-label="Задать вопрос — открыть Google Форму в новой вкладке">
-            <Image src="/presentations/hrlink/questions-qr.png" width={540} height={540} alt="QR-код формы для вопросов" unoptimized/>
-          </a>
+          <SdlcQuestionsLink />
         </SlideLayout>);
 }

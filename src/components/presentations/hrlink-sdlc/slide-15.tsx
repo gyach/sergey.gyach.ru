@@ -1,4 +1,7 @@
-import Image from "next/image";
+import { autonomyLevels } from "./autonomy-levels";
+import { PresentationDetail } from "../presentation-detail";
+import { SdlcQuestionsLink } from "./questions-link";
+import { PresentationIcon } from "../presentation-icons";
 import { SlideLayout } from "../slide-layout";
 /** Пять уровней перехода к Dark Factory — содержание слайда. */
 export function Slide15() {
@@ -31,10 +34,7 @@ export function Slide15() {
           <div className="role-lanes">
             <article>
               <div>
-                <svg className="icon" viewBox="0 0 52 54" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="26" cy="13" r="7"></circle>
-                  <path d="M13 45v-8a13 13 0 0 1 26 0v8z M7 19a5 5 0 1 0 0 10 M45 19a5 5 0 1 1 0 10 M5 36v9h5 M47 36v9h-5"></path>
-                </svg>
+                <PresentationIcon name="analyst"/>
                 <h2>Аналитик</h2>
               </div>
               <strong className="executor">Локальный агент</strong>
@@ -42,10 +42,7 @@ export function Slide15() {
             </article>
             <article>
               <div>
-                <svg className="icon" viewBox="0 0 52 54" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="4" y="7" width={44} height={39} rx="9"></rect>
-                  <path d="m19 18-8 8 8 8 m14-16 8 8-8 8 m-4-21-5 26"></path>
-                </svg>
+                <PresentationIcon name="code"/>
                 <h2>Разработчик</h2>
               </div>
               <strong className="executor">Локальный агент</strong>
@@ -53,10 +50,7 @@ export function Slide15() {
             </article>
             <article>
               <div>
-                <svg className="icon" viewBox="0 0 52 54" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="22" cy="22" r="15"></circle>
-                  <path d="m33 33 14 14 M13 22l6 6 11-13"></path>
-                </svg>
+                <PresentationIcon name="check"/>
                 <h2>QA</h2>
               </div>
               <strong className="executor">Локальный агент</strong>
@@ -64,7 +58,7 @@ export function Slide15() {
             </article>
           </div>
           <div className="autonomy-loop" hidden>
-            <b>Человек задаёт цель и границы</b><span>Результат → проверка → исправление ↺</span><small>Нерешённые вопросы и выход за заданные границы → человеку</small>
+            <b>Люди задают цель и границы</b><span>Выполнение → проверка → исправление ↺</span><small>Специалисты принимают результат по своим направлениям</small>
           </div>
           <p className="level-change" id="level-change">
             Агент помогает каждой роли, но работа ещё зависит от её локального
@@ -76,19 +70,7 @@ export function Slide15() {
           </p>
           <div className="level-footer">
             <span>Пять способов организации работы</span>
-            <details open className="detail compare">
-              <summary title="Подробнее" aria-label="Пять уровней: как меняется роль человека">
-                Сравнить уровни<svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 17 17 7 M7 7h10v10"></path>
-                </svg>
-              </summary>
-              <div className="dialog-content">
-                <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                  <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="m6 6 12 12 M18 6 6 18"></path>
-                  </svg>
-                </button>
-                <h2>Пять уровней: как меняется роль человека</h2>
+            <PresentationDetail title="Пять уровней: как меняется роль человека" variant="compare" summary="Сравнить уровни">
                 <div className="table-scroll">
                   <table>
                     <thead>
@@ -101,73 +83,13 @@ export function Slide15() {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>0</td>
-                        <td>Без AI</td>
-                        <td>
-                          Аналитик, разработчик и QA сами выполняют работу и
-                          передают её дальше
-                        </td>
-                        <td>Не участвует</td>
-                        <td>Человек выполняет все этапы</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>AI-чат</td>
-                        <td>
-                          Сотрудник задаёт вопросы, передаёт материалы в чат и
-                          использует ответ
-                        </td>
-                        <td>Подсказывает и помогает с черновиком</td>
-                        <td>
-                          Человек сам переносит результат в рабочие инструменты
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Локальный агент</td>
-                        <td>
-                          Сотрудник ставит задачу и управляет агентом на своём
-                          устройстве
-                        </td>
-                        <td>
-                          Работает с доступными файлами и инструментами
-                          сотрудника
-                        </td>
-                        <td>
-                          Агент помогает каждой роли, но работа ещё зависит от
-                          её локального окружения
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Фоновый агент</td>
-                        <td>
-                          Сотрудник направляет работу и подключается, если есть
-                          вопросы или что-то пошло не так
-                        </td>
-                        <td>
-                          Выполняет задачи в отдельной среде, независимо от
-                          ноутбука сотрудника
-                        </td>
-                        <td>
-                          Агент работает без постоянного участия человека. Как
-                          передавать контекст и результаты между этапами, ещё
-                          нужно согласовать
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>Автономный цикл (Dark Factory)</td>
-                        <td>Люди задают цели и наблюдают за результатом</td>
-                        <td>
-                          Выполняет весь цикл работы в пределах, которые мы
-                          задали
-                        </td>
-                        <td>
-                          Система сама выполняет, проверяет и исправляет работу
-                        </td>
-                      </tr>
+                      {autonomyLevels.map((level) => <tr key={level.id}>
+                        <td>{level.id}</td>
+                        <td>{level.tableName ?? level.name}</td>
+                        <td>{level.human}</td>
+                        <td>{level.agent}</td>
+                        <td>{level.change}</td>
+                      </tr>)}
                     </tbody>
                   </table>
                 </div>
@@ -177,18 +99,34 @@ export function Slide15() {
                   результаты дальше по согласованной схеме. От 3 к 4: выполняет
                   весь цикл, включая проверку и исправления.
                 </p>
+                <h3>Почему нельзя просто запустить всё ночью?</h3>
+                <p>
+                  Удалённый запуск — доступ к агенту в другой среде по команде
+                  человека. Фоновая работа — выполнение отдельной операции
+                  без постоянного участия сотрудника. Автономный цикл —
+                  самостоятельное прохождение выполнения, проверок и
+                  исправлений. Для каждого сценария нужны свои критерии
+                  приёмки и условия остановки; общий сервер сам по себе
+                  их не заменяет.
+                </p>
+                <h3>Где остаются люди?</h3>
+                <p>
+                  Сейчас специалисты проверяют промежуточные результаты.
+                  В предлагаемой целевой модели система сама проходит этапы.
+                  Люди задают цель и границы; специалисты принимают результат
+                  по своим направлениям. Приёмка включает экспертное ревью кода
+                  и проверку продукта. Нерешённые вопросы и выход за заданные
+                  границы система возвращает людям.
+                </p>
                 <p>
                   Схема описывает способы работы. Команда сейчас на уровне 2, но не
                   во всех ролях: агентом пользуются, но каждый по-своему.
                   Человек задаёт цели и пределы самостоятельности, а система
                   обращается к нему с нерешёнными вопросами.
                 </p>
-              </div>
-            </details>
+              </PresentationDetail>
             <p className="next-slide">Далее: три шага к Dark Factory.</p>
           </div>
-          <a className="questions-link" href="https://forms.gle/oyTGxUvNRTSkAe4X9" target="_blank" rel="noopener noreferrer" aria-label="Задать вопрос — открыть Google Форму в новой вкладке">
-            <Image src="/presentations/hrlink/questions-qr.png" width={540} height={540} alt="QR-код формы для вопросов" unoptimized/>
-          </a>
+          <SdlcQuestionsLink />
         </SlideLayout>);
 }

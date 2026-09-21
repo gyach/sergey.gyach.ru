@@ -1,27 +1,26 @@
-import Image from "next/image";
+import { PresentationDetail } from "../presentation-detail";
+import { SdlcQuestionsLink } from "./questions-link";
+import { SlideTail } from "../slide-tail";
+import { PresentationIcon } from "../presentation-icons";
 import { SlideLayout } from "../slide-layout";
-/** Этап 04. Здесь цепочка навыков прерывается — содержание слайда. */
+/** Этап 04. Единую цепочку навыков ещё предстоит собрать — содержание слайда. */
 export function Slide08() {
     return (<SlideLayout number={8} variant="content" title={<>
-            Этап 04. Здесь цепочка навыков прерывается
+            Этап 04. Единую цепочку навыков ещё предстоит собрать
           </>} eyebrow={<>ТЕКУЩИЙ ПРОЦЕСС</>}>
           <p className="lead small">
-            У разработки и QA сейчас свои наборы навыков. Как они принимают
-            постановку и возвращают результат аналитику, ещё не согласовано.
+            У разработки и QA свои навыки. QA-требования уже подключены к
+            проверкам аналитики; общий порядок передачи результатов между
+            всеми ролями ещё предстоит согласовать.
           </p>
           <div className="handoff-grid">
             <article>
-              <svg className="icon" viewBox="0 0 52 54" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M13 5h16l10 10v34H13z M29 5v12h10 M20 26h12 M20 33h12 M20 40h9"></path>
-              </svg>
+              <PresentationIcon name="document"/>
               <h2>Аналитик</h2>
               <p>Отвечает на вопросы.</p>
             </article>
             <article>
-              <svg className="icon" viewBox="0 0 52 54" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="4" y="7" width={44} height={39} rx="9"></rect>
-                <path d="m19 18-8 8 8 8 m14-16 8 8-8 8 m-4-21-5 26"></path>
-              </svg>
+              <PresentationIcon name="code"/>
               <h2>Разработчик</h2>
               <p>
                 Реализует изменение. Корректирует постановку по фактической
@@ -29,13 +28,11 @@ export function Slide08() {
               </p>
             </article>
             <article>
-              <svg className="icon" viewBox="0 0 52 54" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="22" cy="22" r="15"></circle>
-                <path d="m33 33 14 14 M13 22l6 6 11-13"></path>
-              </svg>
+              <PresentationIcon name="check"/>
               <h2>QA</h2>
               <p>
-                Проверяет реализацию. Фиксирует результат и найденные дефекты.
+                Готовит тест-планы по готовой аналитике, до появления кода.
+                Затем проверяет реализацию и фиксирует дефекты.
               </p>
             </article>
           </div>
@@ -46,20 +43,8 @@ export function Slide08() {
             Следующий шаг — договориться, как навыки трёх ролей будут передавать
             работу друг другу.
           </p>
-          <div className="slide-tail">
-            <details open className="detail stage">
-              <summary title="Подробнее" aria-label="Что участники передают друг другу">
-                Что участники передают друг другу<svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 17 17 7 M7 7h10v10"></path>
-                </svg>
-              </summary>
-              <div className="dialog-content">
-                <button className="close" type="button" title="Закрыть" aria-label="Закрыть">
-                  <svg className="control-icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="m6 6 12 12 M18 6 6 18"></path>
-                  </svg>
-                </button>
-                <h2>Что участники передают друг другу</h2>
+          <SlideTail next="Далее: как обновить описание продукта после релиза.">
+            <PresentationDetail title="Что участники передают друг другу" variant="stage">
                 <dl>
                   <dt>Что нужно для работы</dt>
                   <dd>
@@ -86,14 +71,15 @@ export function Slide08() {
                     который его подготовил.
                   </dd>
                 </dl>
-              </div>
-            </details>
-            <p className="next-slide">
-              Далее: как обновить описание продукта после релиза.
-            </p>
-          </div>
-          <a className="questions-link" href="https://forms.gle/oyTGxUvNRTSkAe4X9" target="_blank" rel="noopener noreferrer" aria-label="Задать вопрос — открыть Google Форму в новой вкладке">
-            <Image src="/presentations/hrlink/questions-qr.png" width={540} height={540} alt="QR-код формы для вопросов" unoptimized/>
-          </a>
+                <h3>Нужно ли ждать разработки, чтобы готовить тест-план?</h3>
+                <p>
+                  Нет: используемый QA подход опирается на готовую аналитику.
+                  Тест-план можно готовить до появления кода. Если требования
+                  меняются, план нужно актуализировать. Проверка реализации
+                  выполняется после её готовности.
+                </p>
+              </PresentationDetail>
+            </SlideTail>
+          <SdlcQuestionsLink />
         </SlideLayout>);
 }
