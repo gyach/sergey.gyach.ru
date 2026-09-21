@@ -29,9 +29,11 @@ export const metadata: Metadata = {
 /** Серверная страница: все слайды доступны в статическом экспорте и без JavaScript. */
 export default function SdlcPresentation() {
     return <>
-    <PresentationHeader label="SDLC · возможности навыков"/>
-    <main className="sdlc-slides"><Slide01 /><Slide02 /><Slide03 /><Slide04 /><Slide05 /><Slide06 /><Slide07 /><Slide08 /><Slide09 /><Slide10 /><Slide11 /><Slide12 /><Slide13 /><Slide14 /><Slide15 /><Slide16 /><Slide17 /><Slide18 /></main>
-    <PresentationFooter />
+    <div className="deck">
+      <PresentationHeader label="SDLC · возможности навыков"/>
+      <main className="sdlc-slides"><Slide01 /><Slide02 /><Slide03 /><Slide04 /><Slide05 /><Slide06 /><Slide07 /><Slide08 /><Slide09 /><Slide10 /><Slide11 /><Slide12 /><Slide13 /><Slide14 /><Slide15 /><Slide16 /><Slide17 /><Slide18 /></main>
+      <PresentationFooter />
+    </div>
     <p className="nojs-only">Все слайды и пояснения можно читать подряд. Для показа по одному слайду нужен JavaScript.</p>
     <div id="status" className="status-message" role="status"/>
     <DeckEnhancer />

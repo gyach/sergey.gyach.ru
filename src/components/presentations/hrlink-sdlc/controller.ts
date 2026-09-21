@@ -348,66 +348,14 @@ export function mountPresentation() {
             hadModal ||
             (previousSlide && !previousSlide.classList.contains("active")))
             required(slides[current], "h1").focus({ preventScroll: true });
-        fitSlide();
         window.scrollTo({ top: 0, behavior: "instant" });
-        frame(() => {
-            fitSlide();
-            window.scrollTo({ top: 0, behavior: "instant" });
-        });
     }
-    /** Масштабирует активный слайд, если его содержимое не помещается между шапкой и панелью навигации. */
-    function fitSlide() {
-        const slide = slides[current];
-        const inner = slide?.querySelector<HTMLElement>(".slide-inner");
-        if (!inner)
-            return;
-        inner.removeAttribute("data-fit");
-        inner.style.removeProperty("--fit");
-        inner.style.minHeight = "";
-        if (window.innerWidth <= 900)
-            return;
-        const header = required(document, ".topbar");
-        const footer = required(document, ".footer");
-        const available = window.innerHeight -
-            (header ? header.getBoundingClientRect().height : 0) -
-            (footer ? footer.getBoundingClientRect().height : 0);
-        if (available <= 0)
-            return;
-        const top = inner.getBoundingClientRect().top;
-        let bottom = top;
-        for (const child of inner.children) {
-            const cs = getComputedStyle(child);
-            if (cs.display === "none" ||
-                cs.position === "absolute" ||
-                cs.position === "fixed")
-                continue;
-            bottom = Math.max(bottom, child.getBoundingClientRect().bottom +
-                (parseFloat(cs.marginBottom) || 0));
-        }
-        const needed = bottom - top + (parseFloat(getComputedStyle(inner).paddingBottom) || 0);
-        if (needed <= available + 1)
-            return;
-        const apply = (value: number) => {
-            const fit = Math.max(0.6, Math.floor(value * 1000) / 1000);
-            inner.setAttribute("data-fit", "");
-            inner.style.setProperty("--fit", String(fit));
-            inner.style.minHeight = Math.floor(available / fit) + "px";
-            return fit;
-        };
-        let fit = apply(available / needed);
-        // Контрольная проверка в экранных координатах: документ не должен быть выше окна.
-        for (let pass = 0; pass < 2 && fit > 0.6; pass++) {
-            const over = document.documentElement.scrollHeight - window.innerHeight;
-            if (over <= 1)
-                break;
-            fit = apply(fit * (window.innerHeight / document.documentElement.scrollHeight));
-        }
+    /** Масштабирует холст 1920×1080 по ширине окна; высота следует пропорции 16:9. */
+    const deck = required<HTMLElement>(document, ".deck");
+    function scaleDeck() {
+        deck.style.setProperty("--deck-scale", String(document.documentElement.clientWidth / 1920));
     }
-    let fitTimer: ReturnType<typeof setTimeout> | undefined;
-    listen(window, "resize", () => {
-        clearTimeout(fitTimer);
-        fitTimer = setTimeout(fitSlide, 80);
-    });
+    listen(window, "resize", scaleDeck);
     /** Записывает переход в историю и показывает выбранный слайд. */
     function navigate(hash: string, focusHeading = false) {
         if (hash !== location.hash)
@@ -542,8 +490,6 @@ export function mountPresentation() {
                             : "Выполняет свою часть работы и передаёт результат другим агентам."));
         required(document, ".autonomy-loop").hidden = i !== 4;
         required<HTMLElement>(document, ".role-lanes").dataset.level = String(i);
-        if (typeof fitSlide === "function")
-            fitSlide();
     }
     document
         .querySelectorAll<HTMLButtonElement>(".level-step")
@@ -598,24 +544,20 @@ export function mountPresentation() {
     const dateInterval = setInterval(updatePresentationDate, 60000);
     listen(document, "visibilitychange", updatePresentationDate);
     root.classList.add("js");
+    scaleDeck();
     showSlide();
-    if (document.fonts && document.fonts.ready)
-        document.fonts.ready.then(() => {
-            if (!abort.signal.aborted)
-                fitSlide();
-        });
     return () => {
         abort.abort();
         questionView.active = false;
         questionView.pending?.();
         clearInterval(questionsInterval);
         clearInterval(dateInterval);
-        clearTimeout(fitTimer);
         clearTimeout(statusTimer);
         frames.forEach(cancelAnimationFrame);
         closeDetail(false);
         root.classList.remove("js");
         root.style.removeProperty("--page");
+        deck.style.removeProperty("--deck-scale");
         document.body.classList.remove("modal-open");
         history.scrollRestoration = previousScrollRestoration;
         document.title = originalTitle;

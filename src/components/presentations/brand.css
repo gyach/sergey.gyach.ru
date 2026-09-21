@@ -52,17 +52,17 @@ p {
   margin: 0;
 }
 h1 {
-  font-size: clamp(35px, 3.6vw, 69px);
+  font-size: 69px;
   line-height: 1.05;
   font-weight: 600;
   max-width: 1450px;
 }
 h2 {
-  font-size: clamp(25px, 2.3vw, 43px);
+  font-size: 43px;
   line-height: 1.08;
 }
 p {
-  font-size: clamp(18px, 1.48vw, 28px);
+  font-size: 28px;
   line-height: 1.4;
 }
 code {
@@ -80,7 +80,7 @@ summary {
   display: flex;
   gap: 24px;
   align-items: center;
-  padding: 0 3.4vw;
+  padding: 0 65.28px;
   background: var(--page);
 }
 .brand {
@@ -112,28 +112,28 @@ summary {
   position: relative;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 18px 5vw 25px;
+  padding: 18px 96px 25px;
   min-height: 820px;
 }
 .eyebrow {
-  font-size: clamp(13px, 0.9vw, 17px);
+  font-size: 17px;
   font-weight: 600;
   line-height: 1.4;
   margin-bottom: 15px;
 }
 .lead {
-  font-size: clamp(23px, 2.15vw, 40px);
+  font-size: 40px;
   line-height: 1.18;
 }
 .lead.small {
-  font-size: clamp(20px, 1.7vw, 31px);
+  font-size: 31px;
   margin-top: 20px;
 }
 .muted {
   opacity: 0.77;
 }
 .slide-deck {
-  font-size: clamp(16px, 1.12vw, 21px);
+  font-size: 21px;
   margin-top: 14px;
 }
 .source-row {
@@ -230,12 +230,12 @@ summary::-webkit-details-marker {
 }
 .problem b {
   display: block;
-  font-size: clamp(19px, 1.5vw, 28px);
+  font-size: 28px;
   line-height: 1.15;
 }
 .problem small {
   display: block;
-  font-size: clamp(15px, 1.1vw, 20px);
+  font-size: 20px;
   line-height: 1.25;
   margin-top: 7px;
 }
@@ -271,12 +271,9 @@ th {
   display: block;
 }
 .js .slide-inner {
-  min-height: calc(100dvh - 170px);
+  min-height: 910px;
   display: flex;
   flex-direction: column;
-}
-.js .slide-inner[data-fit] {
-  zoom: var(--fit, 1);
 }
 .js .footer {
   min-height: 76px;
@@ -284,7 +281,7 @@ th {
   justify-content: space-between;
   align-items: center;
   gap: 15px;
-  padding: 0 5vw 10px;
+  padding: 0 96px 10px;
   background: var(--page);
 }
 .footer .footer-left {
@@ -336,7 +333,7 @@ th {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4vh 24px;
+  padding: 43.2px 24px;
   margin: 0;
   border: 0;
   cursor: default;
@@ -347,8 +344,8 @@ th {
 .js .detail[open] > .dialog-content {
   position: relative;
   width: min(100%, 1040px);
-  max-width: calc(100vw - 24px);
-  max-height: 90dvh;
+  max-width: 1896px;
+  max-height: 972px;
   overflow: auto;
   overscroll-behavior: contain;
   padding: 45px 48px;
@@ -434,167 +431,22 @@ th {
 .status-message:empty {
   display: none;
 }
-@media (min-width: 1600px) {
-  .topbar {
-    height: 112px;
-  }
-  .brand {
-    width: 140px;
-    height: 80px;
-  }
-  .js .slide-inner {
-    min-height: calc(100dvh - 200px);
-    padding-top: 24px;
-  }
-  .js .footer {
-    min-height: 88px;
-  }
-  .problem > summary {
-    padding: 20px 0;
-  }
+.topbar {
+  height: 112px;
 }
-@media (max-width: 1100px) {
-  h1 {
-    font-size: 38px;
-  }
-  .toplabel {
-    display: none;
-  }
-  .slide-inner {
-    padding: 18px 4vw 25px;
-  }
-  .problem > summary {
-    gap: 12px;
-  }
-  .problem b {
-    font-size: 19px;
-  }
-  .footer .footer-note {
-    display: none;
-  }
+.brand {
+  width: 140px;
+  height: 80px;
 }
-@media (max-width: 650px) {
-  html {
-    scroll-behavior: auto;
-  }
-  .topbar {
-    height: 68px;
-    padding: 0 20px;
-    gap: 14px;
-  }
-  .brand {
-    width: 88px;
-    height: 52px;
-  }
-  .counter {
-    font-size: 15px;
-  }
-  .slide-inner {
-    padding: 13px 22px 24px;
-    min-height: 0 !important;
-  }
-  h1 {
-    font-size: 35px;
-    line-height: 1.06;
-  }
-  h2 {
-    font-size: 29px;
-  }
-  p {
-    font-size: 19px;
-  }
-  .eyebrow {
-    font-size: 10px;
-    margin-bottom: 13px;
-  }
-  .lead {
-    font-size: 24px;
-  }
-  .js .footer {
-    padding: 12px 22px 18px;
-    flex-wrap: wrap;
-    gap: 8px;
-    min-height: 100px;
-    border-top: 1px solid var(--line);
-  }
-  .footer .footer-left {
-    gap: 18px;
-    width: 100%;
-  }
-  .footer button,
-  .footer a,
-  .footer summary {
-    font-size: 14px;
-  }
-  .footer .prevnext {
-    width: 100%;
-    justify-content: space-between;
-    gap: 15px;
-  }
-  .footer .separator {
-    display: none;
-  }
-  .footer .footer-left > button {
-    margin-left: auto;
-  }
-  .source-row {
-    padding-top: 17px;
-  }
-  .problem > summary {
-    gap: 13px;
-    padding: 17px 0;
-  }
-  .problem b {
-    font-size: 20px;
-  }
-  .problem small {
-    font-size: 16px;
-    line-height: 1.3;
-  }
-  .problem > summary > span:last-child {
-    font-size: 13px;
-  }
-  .slide-deck {
-    font-size: 16px;
-    line-height: 1.4;
-  }
-  .js .detail[open] {
-    padding: 12px;
-  }
-  .js .detail[open] > .dialog-content {
-    padding: 44px 22px 25px;
-    max-height: calc(100dvh - 24px);
-  }
-  .dialog-content h2 {
-    font-size: 28px;
-  }
-  .dialog-content p,
-  .dialog-content li,
-  .dialog-content dd,
-  .dialog-content dt,
-  .js .dialog-content p,
-  .js .dialog-content li,
-  .js .dialog-content dd {
-    font-size: 17px;
-  }
-  .dialog-content h3 {
-    font-size: 20px;
-  }
-  .contents-list {
-    columns: 1;
-  }
-  .contents-list a {
-    font-size: 17px;
-  }
-  .detail > summary {
-    font-size: 15px;
-  }
-  .dialog-content {
-    padding: 20px;
-  }
-  .nojs-only {
-    font-size: 14px;
-  }
+.js .slide-inner {
+  min-height: 880px;
+  padding-top: 24px;
+}
+.js .footer {
+  min-height: 88px;
+}
+.problem > summary {
+  padding: 20px 0;
 }
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -669,20 +521,8 @@ th {
 .problem > summary > .control-icon {
   margin-left: auto;
 }
-@media (min-width: 651px) and (max-width: 1599px) {
-  .js .slide-inner {
-    padding-top: 10px;
-    padding-bottom: 12px;
-  }
-  .source-row {
-    padding-top: 5px;
-  }
-  .source-row .detail {
-    margin: 0;
-  }
-}
 :root {
-  --masthead-height: clamp(82px, 7vw, 132px);
+  --masthead-height: 132px;
   --footer-height: 64px;
 }
 body,
@@ -695,7 +535,7 @@ body,
 }
 .topbar {
   height: var(--masthead-height);
-  padding: 0 3.2vw;
+  padding: 0 61.44px;
   gap: 0;
   position: relative;
   z-index: 2;
@@ -703,48 +543,48 @@ body,
 .topbar .toplabel {
   display: block;
   order: 1;
-  margin-left: 1.05vw;
-  font-size: clamp(13px, 1.05vw, 20px);
+  margin-left: 20.16px;
+  font-size: 20px;
   font-weight: 400;
 }
 .js .slide-inner {
   min-height: calc(
-    100dvh - var(--masthead-height) - var(--footer-height)
+    1080px - var(--masthead-height) - var(--footer-height)
   );
-  padding: 20px 9.375vw 24px;
+  padding: 20px 180px 24px;
 }
 .slide-inner {
   max-width: none;
 }
 .slide h1 {
-  font-size: clamp(27px, 2.15vw, 41px) !important;
+  font-size: 41px !important;
   line-height: 1.16;
   font-weight: 500;
   max-width: none;
 }
 .slide h2 {
-  font-size: clamp(24px, 1.8vw, 35px) !important;
+  font-size: 34.56px !important;
   font-weight: 500;
   line-height: 1.16;
 }
 .slide p {
-  font-size: clamp(16px, 1.08vw, 21px) !important;
+  font-size: 20.74px !important;
   line-height: 1.42;
 }
 .slide .eyebrow {
-  font-size: clamp(13px, 0.95vw, 18px) !important;
+  font-size: 18px !important;
   font-weight: 400;
   line-height: 1.3;
 }
 .slide .lead,
 .slide .lead.small {
-  font-size: clamp(18px, 1.3vw, 25px) !important;
+  font-size: 24.96px !important;
   font-weight: 400;
   line-height: 1.35;
 }
 .js .footer {
   min-height: var(--footer-height);
-  padding: 0 4.25vw 10px;
+  padding: 0 81.6px 10px;
   gap: 20px;
   border: 0;
   position: relative;
@@ -793,10 +633,10 @@ body,
 }
 .problem b {
   font-weight: 500;
-  font-size: clamp(18px, 1.25vw, 24px);
+  font-size: 24px;
 }
 .problem small {
-  font-size: clamp(15px, 1vw, 19px);
+  font-size: 19px;
 }
 .problem > summary {
   padding: 15px 0;
@@ -804,85 +644,8 @@ body,
 .problem {
   border-color: var(--line);
 }
-@media (min-width: 1600px) {
-  .problem > summary {
-    padding: 18px 0;
-  }
-}
-@media (max-width: 1100px) and (min-width: 651px) {
-  .topbar .toplabel {
-    font-size: 13px;
-  }
-  .footer .footer-left {
-    gap: 15px;
-  }
-  .slide h2 {
-    font-size: 24px !important;
-  }
-}
-@media (max-width: 650px) {
-  :root {
-    --masthead-height: 74px;
-    --footer-height: 100px;
-  }
-  .topbar {
-    padding: 0 12px;
-  }
-  .topbar .brand {
-    width: 100px;
-  }
-  .topbar .toplabel {
-    font-size: 12px;
-    margin-left: 10px;
-  }
-  .js .slide-inner {
-    padding: 14px 22px 24px;
-  }
-  .slide h1 {
-    font-size: 29px !important;
-  }
-  .slide p {
-    font-size: 17px !important;
-  }
-  .slide h2 {
-    font-size: 25px !important;
-  }
-  .js .footer {
-    padding: 12px 22px 18px;
-    gap: 8px;
-  }
-  .footer .counter {
-    margin-left: auto;
-  }
-  .footer .prevnext {
-    gap: 18px;
-  }
-  .footer .footer-left {
-    gap: 15px;
-  }
-  .footer button,
-  .footer a,
-  .footer summary {
-    font-size: 12px;
-  }
-  .source-row {
-    padding-top: 18px;
-  }
-  .problem > summary {
-    padding: 17px 0;
-  }
-  .problem b {
-    font-size: 20px;
-  }
-  .problem small {
-    font-size: 16px;
-  }
-  .slide .dialog-content p {
-    font-size: 17px !important;
-  }
-  .slide .dialog-content h2 {
-    font-size: 27px !important;
-  }
+.problem > summary {
+  padding: 18px 0;
 }
 .dialog-content h2 {
   font-weight: 500;
@@ -894,12 +657,12 @@ body {
   display: flex;
   align-items: center;
   gap: 18px;
-  padding: 0 3.2vw;
+  padding: 0 61.44px;
 }
 .topbar .brand {
   order: 0;
   flex: none;
-  width: clamp(72px, 6.05vw, 128px);
+  width: 116.16px;
   height: auto;
   aspect-ratio: 311.258/114.375;
   display: block;
@@ -916,11 +679,11 @@ body {
 .topbar .toplabel {
   order: 2;
   margin-left: 0;
-  font-size: clamp(12px, 0.9vw, 16px);
+  font-size: 16px;
 }
 .topnum {
   order: 4;
-  font-size: clamp(14px, 1.05vw, 19px);
+  font-size: 19px;
   min-width: 2ch;
   text-align: right;
 }
@@ -944,7 +707,7 @@ body {
 .compare {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6vw;
+  gap: 115.2px;
   margin-top: 30px;
 }
 .compare > * {
@@ -959,40 +722,11 @@ body {
   padding: 12px 0;
   margin: 0;
 }
-@media (max-width: 650px) {
-  .topbar {
-    gap: 10px;
-  }
-  .topbar .brand {
-    width: 72px;
-  }
-  .topnum {
-    font-size: 14px;
-  }
-  .topbar .toplabel {
-    display: none;
-  }
-  .compare {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin-top: 22px;
-  }
+.slide .slide-inner {
+  padding-right: 255.2px;
 }
-@media (max-width: 650px) {
-  .detail > summary {
-    white-space: normal;
-    text-align: left;
-  }
-}
-@media (min-width: 901px) {
-  .slide .slide-inner {
-    padding-right: max(9.375vw, calc(clamp(161px, 11vw, 220px) + 44px));
-  }
-}
-@media (min-width: 901px) {
-  .detail > summary {
-    font-size: clamp(15px, 0.9vw, 18px);
-  }
+.detail > summary {
+  font-size: 17.28px;
 }
 /* HRlink Brandbook v4, стр. 24–25 и 32; шаблон PowerPoint 16:9.
  * Onest — основной шрифт. Пробный Rooftop Mono не распространяется с сайтом.
@@ -1006,7 +740,9 @@ body {
   --line: rgb(30 36 61 / 27%);
   --page: var(--cream);
 }
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 body.hrlink-presentation {
   margin: 0;
   background: var(--page);
@@ -1014,28 +750,105 @@ body.hrlink-presentation {
   font-family: var(--font-onest), Arial, sans-serif;
   letter-spacing: 0;
 }
-.hrlink-presentation h1, .hrlink-presentation h2,
-.hrlink-presentation h3, .hrlink-presentation button {
+.hrlink-presentation h1,
+.hrlink-presentation h2,
+.hrlink-presentation h3,
+.hrlink-presentation button {
   font-family: inherit;
 }
-.topbar { display: flex; align-items: center; gap: 18px; padding: 20px 3.2vw; }
-.topbar .brand { flex: none; width: clamp(72px, 6.05vw, 128px); height: auto; }
-.topline { flex: 1; height: 1px; background: var(--line); }
-.topnum { font-variant-numeric: tabular-nums; }
-.slide { background: var(--cream); }
-.slide--cover, .slide--section, .slide--closing { background: var(--blue); }
-.slide-inner { position: relative; max-width: 1920px; margin-inline: auto; padding: 18px 3.2vw 25px; }
-.slide-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.slide-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-@media (max-width: 720px) {
-  .slide-columns, .slide-cards { grid-template-columns: 1fr; }
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 61.44px;
+}
+.topbar .brand {
+  flex: none;
+  width: 116.16px;
+  height: auto;
+}
+.topline {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.topnum {
+  font-variant-numeric: tabular-nums;
+}
+.slide {
+  background: var(--cream);
+}
+.slide--cover,
+.slide--section,
+.slide--closing {
+  background: var(--blue);
+}
+.slide-inner {
+  position: relative;
+  max-width: 1920px;
+  margin-inline: auto;
+  padding: 18px 61.44px 25px;
+}
+.slide-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.slide-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto !important; }
-  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 /* Базовая геометрия переиспользуемых макетов не зависит от страницы SDLC. */
-.slide-cards > article { min-width: 0; }
-.slide-columns > * { min-width: 0; }
-.nojs-only { padding: 22px; }
+.slide-cards > article {
+  min-width: 0;
+}
+.slide-columns > * {
+  min-width: 0;
+}
+.nojs-only {
+  padding: 22px;
+}
+
+/* Холст 16:9: макет свёрстан для 1920×1080 и масштабируется по ширине окна.
+ * Масштаб задаёт контроллер через --deck-scale; без JavaScript слайды читаются подряд.
+ */
+html {
+  scrollbar-gutter: stable;
+}
+body.hrlink-presentation {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+.deck {
+  width: 1920px;
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  zoom: var(--deck-scale, 1);
+}
+.js .deck {
+  height: 1080px;
+  overflow: hidden;
+}
+.js .deck > main {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.js .deck > main > .slide.active {
+  flex: 1;
+  min-height: 0;
+}
