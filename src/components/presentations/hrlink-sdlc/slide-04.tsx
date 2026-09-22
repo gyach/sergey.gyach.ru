@@ -48,7 +48,7 @@ export function Slide04() {
             Если данных не хватает, агент записывает открытые вопросы и
             объясняет, на что они влияют.
           </p>
-          <SlideTail next="Далее: как бизнес-аналитик оформляет решение в историю.">
+          <SlideTail aside={<SdlcQuestionsLink />} next="Далее: как бизнес-аналитик оформляет решение в историю.">
             <PresentationDetail title="Кто за что отвечает в дискавери" variant="stage">
                 <dl>
                   <dt>Что нужно для работы</dt>
@@ -103,6 +103,5 @@ export function Slide04() {
                 </p>
               </PresentationDetail>
             </SlideTail>
-          <SdlcQuestionsLink />
         </SlideLayout>);
 }

@@ -5,7 +5,7 @@ export function PresentationFooter() {
     return (<footer className="footer">
       <div className="footer-left">
         <a href="#slide-03" title="Карта процесса">Карта процесса</a>
-        <PresentationDetail title="18 слайдов · оглавление" summary="Оглавление">
+        <PresentationDetail title="19 слайдов · оглавление" summary="Оглавление">
             <ol className="contents-list">
               <li>
                 <a href="#slide-01"><span>01</span>Текущий SDLC на пути к Dark Factory</a>
@@ -30,43 +30,46 @@ export function PresentationFooter() {
             архитектором</a>
               </li>
               <li>
-                <a href="#slide-07"><span>07</span>Этап 03. Передача задачи в разработку и публикация</a>
+                <a href="#slide-07"><span>07</span>Результаты аналитики</a>
               </li>
               <li>
-                <a href="#slide-08"><span>08</span>Этап 04. Единую цепочку навыков ещё предстоит собрать</a>
+                <a href="#slide-08"><span>08</span>Этап 03. Передача задачи в разработку и публикация</a>
               </li>
               <li>
-                <a href="#slide-09"><span>09</span>Этап 05. Аналитик обновляет описание продукта
+                <a href="#slide-09"><span>09</span>Этап 04. Единую цепочку навыков ещё предстоит собрать</a>
+              </li>
+              <li>
+                <a href="#slide-10"><span>10</span>Этап 05. Аналитик обновляет описание продукта
                   после релиза</a>
               </li>
               <li>
-                <a href="#slide-10"><span>10</span>Девять навыков: что каждый принимает и
+                <a href="#slide-11"><span>11</span>Девять навыков: что каждый принимает и
                   отдаёт</a>
               </li>
               <li>
-                <a href="#slide-11"><span>11</span>Что предстоит сделать</a>
+                <a href="#slide-12"><span>12</span>Что предстоит сделать</a>
               </li>
               <li>
-                <a href="#slide-12"><span>12</span>Обратная связь</a>
+                <a href="#slide-13"><span>13</span>Обратная связь</a>
               </li>
               <li>
-                <a href="#slide-13"><span>13</span>Десять проблем внедрения и что с ними
+                <a href="#slide-14"><span>14</span>Десять проблем внедрения и что с ними
                   делать</a>
               </li>
               <li>
-                <a href="#slide-14"><span>14</span>Единая цепочка навыков</a>
+                <a href="#slide-15"><span>15</span>Единая цепочка навыков</a>
               </li>
               <li>
-                <a href="#slide-15"><span>15</span>Пять уровней перехода к Dark Factory</a>
+                <a href="#slide-16"><span>16</span>Пять уровней перехода к Dark Factory</a>
               </li>
               <li>
-                <a href="#slide-16"><span>16</span>Три шага к Dark Factory</a>
+                <a href="#slide-17"><span>17</span>Три шага к Dark Factory</a>
               </li>
               <li>
-                <a href="#slide-17"><span>17</span>Вопросы участников</a>
+                <a href="#slide-18"><span>18</span>Вопросы участников</a>
               </li>
               <li>
-                <a href="#slide-18"><span>18</span>Спасибо за внимание</a>
+                <a href="#slide-19"><span>19</span>Спасибо за внимание</a>
               </li>
             </ol>
             <p className="muted">
@@ -85,7 +88,7 @@ export function PresentationFooter() {
           <ControlIcon name="previous"/>Назад
         </button>
         <button id="next" type="button" title="Далее">
-          Далее<ControlIcon name="next"/></button><span className="counter" aria-live="polite">01 / 18</span>
+          Далее<ControlIcon name="next"/></button><span className="counter" aria-live="polite">01 / 19</span>
       </nav>
     </footer>);
 }

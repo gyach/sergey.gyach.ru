@@ -44,7 +44,7 @@ export function Slide05() {
             <code>hrl-humanizer</code> убирает тяжёлые и двусмысленные обороты,
             не меняя смысла истории.
           </p>
-          <SlideTail next="Далее: как системный аналитик превращает историю в техническую постановку.">
+          <SlideTail aside={<SdlcQuestionsLink />} next="Далее: как системный аналитик превращает историю в техническую постановку.">
             <PresentationDetail title="Как бизнес-аналитик готовит историю" variant="stage">
                 <dl>
                   <dt>Что нужно для работы</dt>
@@ -84,6 +84,5 @@ export function Slide05() {
                 </p>
               </PresentationDetail>
             </SlideTail>
-          <SdlcQuestionsLink />
         </SlideLayout>);
 }

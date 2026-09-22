@@ -23,7 +23,7 @@ export function Slide03() {
               <p>Бизнес-аналитик + системный аналитик + дизайнер</p>
               <p className="muted">История → техническая постановка → задачи</p>
               <p className="skill-label">hrl-analyze · hrl-humanizer · hrl-wtf</p>
-              <a className="pill dark" href="#slide-05">К слайдам 05–06<ControlIcon name="next"/></a>
+              <a className="pill dark" href="#slide-05">К слайдам 05–07<ControlIcon name="next"/></a>
             </article>
             <article className="map-node">
               <span className="node-number">03</span>
@@ -35,7 +35,7 @@ export function Slide03() {
               <p className="skill-label">
                 hrl-analyze · hrl-atlassian · hrl-publish
               </p>
-              <a className="pill dark" href="#slide-07">К слайду 07<ControlIcon name="next"/></a>
+              <a className="pill dark" href="#slide-08">К слайду 08<ControlIcon name="next"/></a>
             </article>
             <article className="map-node">
               <span className="node-number">04</span>
@@ -45,7 +45,7 @@ export function Slide03() {
               <p className="skill-label">
                 Общий набор навыков ещё предстоит собрать
               </p>
-              <a className="pill dark" href="#slide-08">К слайду 08<ControlIcon name="next"/></a>
+              <a className="pill dark" href="#slide-09">К слайду 09<ControlIcon name="next"/></a>
             </article>
             <article className="map-node">
               <span className="node-number">05</span>
@@ -56,8 +56,9 @@ export function Slide03() {
                 регулярна
               </p>
               <p className="skill-label">hrl-living-specs · hrl-retrospect</p>
-              <a className="pill dark" href="#slide-09">К слайдам 09 и 12<ControlIcon name="next"/></a>
+              <a className="pill dark" href="#slide-10">К слайдам 10 и 13<ControlIcon name="next"/></a>
             </article>
+            <SdlcQuestionsLink />
           </div>
           <SlideTail next="Далее: дискавери — от идеи к понятному запросу.">
             <PresentationDetail title="Как связаны этапы" variant="stage">
@@ -88,6 +89,5 @@ export function Slide03() {
                 </p>
               </PresentationDetail>
             </SlideTail>
-          <SdlcQuestionsLink />
         </SlideLayout>);
 }

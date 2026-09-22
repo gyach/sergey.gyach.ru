@@ -20,6 +20,7 @@ import { Slide15 } from "@/components/presentations/hrlink-sdlc/slide-15";
 import { Slide16 } from "@/components/presentations/hrlink-sdlc/slide-16";
 import { Slide17 } from "@/components/presentations/hrlink-sdlc/slide-17";
 import { Slide18 } from "@/components/presentations/hrlink-sdlc/slide-18";
+import { Slide19 } from "@/components/presentations/hrlink-sdlc/slide-19";
 import "./sdlc.css";
 export const metadata: Metadata = {
     title: "SDLC: от запроса к автономности",
@@ -31,7 +32,7 @@ export default function SdlcPresentation() {
     return <>
     <div className="deck">
       <PresentationHeader label="SDLC · возможности навыков"/>
-      <main className="sdlc-slides"><Slide01 /><Slide02 /><Slide03 /><Slide04 /><Slide05 /><Slide06 /><Slide07 /><Slide08 /><Slide09 /><Slide10 /><Slide11 /><Slide12 /><Slide13 /><Slide14 /><Slide15 /><Slide16 /><Slide17 /><Slide18 /></main>
+      <main className="sdlc-slides"><Slide01 /><Slide02 /><Slide03 /><Slide04 /><Slide05 /><Slide06 /><Slide07 /><Slide08 /><Slide09 /><Slide10 /><Slide11 /><Slide12 /><Slide13 /><Slide14 /><Slide15 /><Slide16 /><Slide17 /><Slide18 /><Slide19 /></main>
       <PresentationFooter />
     </div>
     <p className="nojs-only">Все слайды и пояснения можно читать подряд. Для показа по одному слайду нужен JavaScript.</p>

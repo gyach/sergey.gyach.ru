@@ -366,7 +366,7 @@ export function mountPresentation() {
     function currentLevel() {
         return levelButtons.findIndex((b) => b.getAttribute("aria-pressed") === "true");
     }
-    /** Переключает уровень внутри слайда 15, затем соседний слайд. */
+    /** Переключает уровень на слайде автономности, затем соседний слайд. */
     function go(delta: number) {
         if (slides[current] === levelSlide) {
             const l = currentLevel() + delta;

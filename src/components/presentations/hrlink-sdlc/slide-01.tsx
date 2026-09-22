@@ -29,6 +29,8 @@ export function Slide01() {
           <div className="cover-meta">
             <p className="cover-caption">9 навыков <span>·</span> 5 этапов SDLC</p>
           </div>
+          <div className="cover-discussion">
+            <div className="cover-discussion-copy">
           <PresentationDetail title="Как читать презентацию" variant="stage">
               <p>
                 SDLC — весь путь изменения продукта: от запроса до разработки,
@@ -41,11 +43,11 @@ export function Slide01() {
                 готовит и какие решения остаются за человеком.
               </p>
               <p>
-                Слайды 1–10 описывают текущую работу. Слайды 11–16 — что
+                Слайды 1–11 описывают текущую работу. Слайды 12–17 — что
                 предстоит наладить: практику обратной связи, проблемы внедрения
                 и путь к Dark Factory. Общий процесс для аналитики, разработки и
-                QA ещё предстоит построить. Слайд 17 показывает вопросы
-                участников, слайд 18 — контакты автора.
+                QA ещё предстоит построить. Слайд 18 показывает вопросы
+                участников, слайд 19 — контакты автора.
               </p>
             </PresentationDetail>
           <p className="cover-caption cover-footnote" id="cover-footnote">
@@ -59,6 +61,8 @@ export function Slide01() {
               <strong>Гяч Сергей</strong><span className="cover-author-role">Руководитель отдела аналитики HRlink</span><time id="presentation-date"></time>
             </div>
           </div>
-          <SdlcQuestionsLink />
+            </div>
+            <SdlcQuestionsLink />
+          </div>
         </SlideLayout>);
 }
