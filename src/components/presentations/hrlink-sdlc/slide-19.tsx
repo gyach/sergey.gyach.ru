@@ -1,4 +1,3 @@
-import { SdlcQuestionsLink } from "./questions-link";
 import Image from "next/image";
 import { SlideLayout } from "../slide-layout";
 /** Спасибо за внимание — содержание слайда. */
@@ -29,13 +28,11 @@ export function Slide19() {
                   </dd>
                 </div>
               </dl>
-              <div className="contact-more">
-                <a href="https://max.ru/u/f9LHodD0cOJwNP_K5y_Cy5WZPGaoIyGP7GCynA4IeNgKUAOZIoz7mweMgr0" target="_blank" rel="noopener noreferrer">MAX ↗</a>
-                <a href="https://github.com/gyach" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                <a href="https://habr.com/ru/users/gyach/publications/articles/" target="_blank" rel="noopener noreferrer">Хабр ↗</a>
-              </div>
+              <a className="contact-site-qr" href="https://sergey.gyach.ru/" target="_blank" rel="noopener noreferrer" aria-label="Открыть сайт Сергея Гяча в новой вкладке">
+                <Image src="/presentations/hrlink/site-qr.svg" width={33} height={33} alt="QR-код сайта sergey.gyach.ru" unoptimized/>
+                <span aria-hidden="true">Открыть сайт ↗</span>
+              </a>
             </div>
-            <SdlcQuestionsLink />
           </div>
         </SlideLayout>);
 }

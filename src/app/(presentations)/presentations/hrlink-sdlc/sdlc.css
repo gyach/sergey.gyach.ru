@@ -1277,12 +1277,21 @@ html:not(.js) .level-footer .detail {
   text-decoration-color: var(--orange);
   text-underline-offset: 6px;
 }
-#slide-19 .contact-more {
+#slide-19 .contact-info .contact-site-qr {
   display: flex;
-  flex-wrap: wrap;
-  gap: 28px;
+  flex-direction: column;
+  align-items: center;
+  width: var(--questions-qr-large-size);
+  gap: 10px;
   margin-top: 28px;
-  font-size: 18px;
+  color: var(--questions-qr-color);
+  font-size: 16px;
+  text-decoration: none;
+}
+.contact-site-qr img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 #slide-01 .fn-mark {
   color: var(--orange);
@@ -1433,22 +1442,30 @@ html:not(.js) .level-footer .detail {
   margin-top: 12px;
 }
 
+.sdlc-slides {
+  --questions-qr-size: 144px;
+  --questions-qr-large-size: 180px;
+  --questions-qr-color: #334e68;
+}
 /* QR-код занимает место в потоке той композиции, к которой относится. */
 .slide .questions-link {
-  width: 192px;
+  width: var(--questions-qr-size);
   max-width: 100%;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  color: #102238;
+  color: var(--questions-qr-color);
   background: transparent;
   padding: 0;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.2;
   font-weight: 600;
+}
+.questions-link > span {
+  white-space: nowrap;
 }
 .questions-link img {
   display: block;
@@ -1456,13 +1473,13 @@ html:not(.js) .level-footer .detail {
   height: auto;
 }
 .questions-link:focus-visible {
-  outline: 3px solid #ff6500;
+  outline: 3px solid var(--questions-qr-color);
   outline-offset: 4px;
 }
 .js .slide-tail--aside,
 .slide-tail--aside {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 192px;
+  grid-template-columns: minmax(0, 1fr) var(--questions-qr-size);
   gap: 40px;
   align-items: center;
 }
@@ -1484,7 +1501,7 @@ html:not(.js) .level-footer .detail {
 .cover-discussion,
 .questions-discussion {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 240px;
+  grid-template-columns: minmax(0, 1fr) var(--questions-qr-large-size);
   align-items: center;
   gap: 64px;
 }
@@ -1496,7 +1513,7 @@ html:not(.js) .level-footer .detail {
 }
 .cover-discussion > .questions-link,
 .questions-discussion > .questions-link {
-  width: 240px;
+  width: var(--questions-qr-large-size);
 }
 .questions-discussion {
   margin-top: 28px;
@@ -1509,7 +1526,7 @@ html:not(.js) .level-footer .detail {
 }
 .artifact-core-ending {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 192px;
+  grid-template-columns: minmax(0, 1fr) var(--questions-qr-size);
   gap: 24px;
   align-items: start;
 }
@@ -1520,18 +1537,11 @@ html:not(.js) .level-footer .detail {
   margin-top: 20px;
 }
 #slide-16 .role-lanes {
-  grid-template-columns: repeat(3, minmax(0, 1fr)) 192px;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) var(--questions-qr-size);
   gap: 40px;
 }
 .role-lanes > .questions-link {
   align-self: center;
-}
-#slide-19 .contact-layout {
-  grid-template-columns: minmax(220px, 340px) minmax(0, 1fr) 240px;
-  column-gap: 64px;
-}
-#slide-19 .contact-layout > .questions-link {
-  width: 240px;
 }
 @media print {
   .slide .questions-link {
