@@ -486,9 +486,18 @@ export function mountPresentation() {
                     : i === 2
                         ? roleWork[n]
                         : i === 3
-                            ? "Выполняет задачи в фоне, независимо от ноутбука."
+                            ? "Выполняет задачу в фоне, в том числе ночью, и ждёт решения человека."
                             : "Выполняет свою часть работы и передаёт результат другим агентам."));
-        required(document, ".autonomy-loop").hidden = i !== 4;
+        required(document, ".autonomy-loop").hidden = i < 3;
+        byId("autonomy-loop-title").textContent = i === 3
+            ? "Human-in-the-loop · наша цель"
+            : "Люди задают цель и границы";
+        byId("autonomy-loop-steps").textContent = i === 3
+            ? "Задача → результат → ожидание решения"
+            : "Выполнение → проверка → исправление ↺";
+        byId("autonomy-loop-decision").textContent = i === 3
+            ? "Человек принимает результат или возвращает замечания"
+            : "Специалисты принимают результат по своим направлениям";
         required<HTMLElement>(document, ".role-lanes").dataset.level = String(i);
     }
     document

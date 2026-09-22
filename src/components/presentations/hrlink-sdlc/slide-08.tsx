@@ -1,7 +1,6 @@
 import { PresentationDetail } from "../presentation-detail";
 import { SdlcQuestionsLink } from "./questions-link";
 import { SlideTail } from "../slide-tail";
-import { PresentationIcon } from "../presentation-icons";
 import { SlideLayout } from "../slide-layout";
 /** Этап 03. Передача задачи в разработку и публикация — содержание слайда. */
 export function Slide08() {
@@ -15,7 +14,7 @@ export function Slide08() {
           </p>
           <div className="publishing">
             <div className="source-of-truth">
-              <PresentationIcon name="document"/><span className="eyebrow">Где хранится исходный текст</span>
+              <span className="eyebrow">Где хранится исходный текст</span>
               <h2>Markdown<br />в Git</h2>
               <p>Новые постановки — в основной ветке Git</p>
             </div>

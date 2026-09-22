@@ -28,7 +28,7 @@ export function Slide07() {
           </div>
         </section>
         <section aria-labelledby="artifacts-release">
-          <h2 id="artifacts-release">Выпуск и сопровождение</h2>
+          <h2 id="artifacts-release">Релиз и сопровождение</h2>
           <p className="artifact-scope">Когда применимо к изменению</p>
           <dl>
             <div><dt>Обзор функциональности</dt><dd>Как вся функция выглядит для пользователя?</dd></div>
@@ -45,7 +45,7 @@ export function Slide07() {
         <strong>Служебные артефакты:</strong> контекст, решения, открытые вопросы, состояние работы, трассировка, отчёты ревью и уточнения глоссария.
       </p>
       <p className="artifact-learnings">
-        <strong>Самообучение навыков · learnings:</strong> корректировки → выводы → улучшение инструкций по команде человека.
+        Самообучение навыков · learnings: корректировки → выводы → улучшение инструкций по команде человека.
       </p>
       <SlideTail next="Далее: передача задачи в разработку и публикация." />
     </SlideLayout>

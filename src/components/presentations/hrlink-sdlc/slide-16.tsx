@@ -1,12 +1,11 @@
 import { autonomyLevels } from "./autonomy-levels";
 import { PresentationDetail } from "../presentation-detail";
 import { SdlcQuestionsLink } from "./questions-link";
-import { PresentationIcon } from "../presentation-icons";
 import { SlideLayout } from "../slide-layout";
-/** Пять уровней перехода к Dark Factory — содержание слайда. */
+/** Пять уровней работы: Human-in-the-loop как цель, Dark Factory как перспектива. */
 export function Slide16() {
     return (<SlideLayout number={16} variant="content" title={<>
-            Пять уровней перехода к Dark Factory
+            Пять уровней: наша цель — Human-in-the-loop
           </>} eyebrow={<>ЧТО ПРЕДСТОИТ / ВЫБЕРИТЕ УРОВЕНЬ</>}>
           <div className="level-steps" role="group" aria-label="Уровень автономности">
             <button type="button" className="level-step" data-level="0" aria-pressed="false">
@@ -19,10 +18,10 @@ export function Slide16() {
               <span>2</span><b>Локальный агент<br /><small className="level-here">мы здесь</small></b>
             </button>
             <button type="button" className="level-step" data-level="3" aria-pressed="false">
-              <span>3</span><b>Фоновый агент</b>
+              <span>3</span><b>Фоновый агент<br /><small className="level-here">цель · HITL</small></b>
             </button>
             <button type="button" className="level-step" data-level="4" aria-pressed="false">
-              <span>4</span><b>Автономный цикл<br /><small>Dark Factory</small></b>
+              <span>4</span><b>Dark Factory<br /><small>дальнейшее развитие</small></b>
             </button>
           </div>
           <div className="level-caption" aria-live="polite">
@@ -34,7 +33,7 @@ export function Slide16() {
           <div className="role-lanes">
             <article>
               <div>
-                <PresentationIcon name="analyst"/>
+                <span className="role-number" aria-hidden="true">01</span>
                 <h2>Аналитик</h2>
               </div>
               <strong className="executor">Локальный агент</strong>
@@ -42,7 +41,7 @@ export function Slide16() {
             </article>
             <article>
               <div>
-                <PresentationIcon name="code"/>
+                <span className="role-number" aria-hidden="true">02</span>
                 <h2>Разработчик</h2>
               </div>
               <strong className="executor">Локальный агент</strong>
@@ -50,7 +49,7 @@ export function Slide16() {
             </article>
             <article>
               <div>
-                <PresentationIcon name="check"/>
+                <span className="role-number" aria-hidden="true">03</span>
                 <h2>QA</h2>
               </div>
               <strong className="executor">Локальный агент</strong>
@@ -59,7 +58,7 @@ export function Slide16() {
             <SdlcQuestionsLink />
           </div>
           <div className="autonomy-loop" hidden>
-            <b>Люди задают цель и границы</b><span>Выполнение → проверка → исправление ↺</span><small>Специалисты принимают результат по своим направлениям</small>
+            <b id="autonomy-loop-title">Люди задают цель и границы</b><span id="autonomy-loop-steps">Выполнение → проверка → исправление ↺</span><small id="autonomy-loop-decision">Специалисты принимают результат по своим направлениям</small>
           </div>
           <p className="level-change" id="level-change">
             Агент помогает каждой роли, но работа ещё зависит от её локального
@@ -96,28 +95,30 @@ export function Slide16() {
                 </div>
                 <p>
                   От 0 к 1: AI помогает с ответом. От 1 к 2: агент работает с
-                  файлами и инструментами. От 2 к 3: работает в фоне и передаёт
-                  результаты дальше по согласованной схеме. От 3 к 4: выполняет
-                  весь цикл, включая проверку и исправления.
+                  файлами и инструментами. От 2 к 3: самостоятельно выполняет
+                  свою задачу в фоне и ждёт решения человека. Это наша цель,
+                  Human-in-the-loop (HITL). От 3 к 4: сам проходит переходы между
+                  этапами, проверки и исправления. Dark Factory остаётся
+                  следующим возможным шагом развития.
                 </p>
-                <h3>Почему нельзя просто запустить всё ночью?</h3>
+                <h3>Как устроена ночная работа с человеком в цикле?</h3>
                 <p>
-                  Удалённый запуск — доступ к агенту в другой среде по команде
-                  человека. Фоновая работа — выполнение отдельной операции
-                  без постоянного участия сотрудника. Автономный цикл —
-                  самостоятельное прохождение выполнения, проверок и
-                  исправлений. Для каждого сценария нужны свои критерии
-                  приёмки и условия остановки; общий сервер сам по себе
-                  их не заменяет.
+                  Человек задаёт работу, границы и критерии проверки.
+                  Агент выполняет свою часть в отдельной среде, независимо
+                  от ноутбука, в том числе ночью. Затем показывает результат
+                  и ждёт решения: принять, доработать по замечаниям или
+                  остановить. После доработки результат снова проверяет
+                  человек. Отсутствие ответа не разрешает продолжение.
                 </p>
                 <h3>Где остаются люди?</h3>
                 <p>
-                  Сейчас специалисты проверяют промежуточные результаты.
-                  В предлагаемой целевой модели система сама проходит этапы.
-                  Люди задают цель и границы; специалисты принимают результат
-                  по своим направлениям. Приёмка включает экспертное ревью кода
-                  и проверку продукта. Нерешённые вопросы и выход за заданные
-                  границы система возвращает людям.
+                  В целевой модели HITL человек участвует после каждой
+                  порученной части работы: проверяет результат и определяет
+                  следующий шаг. Приёмка по роли включает проверку требований,
+                  экспертное ревью кода или проверку продукта. Нерешённые
+                  вопросы и выход за границы агент возвращает человеку.
+                  В перспективной модели Dark Factory система сама проходит
+                  цикл между этапами, а специалисты принимают итог.
                 </p>
                 <p>
                   Схема описывает способы работы. Команда сейчас на уровне 2, но не
@@ -126,7 +127,7 @@ export function Slide16() {
                   обращается к нему с нерешёнными вопросами.
                 </p>
               </PresentationDetail>
-            <p className="next-slide">Далее: три шага к Dark Factory.</p>
+            <p className="next-slide">Далее: три шага к Human-in-the-loop.</p>
           </div>
         </SlideLayout>);
 }

@@ -1,7 +1,6 @@
 import { PresentationDetail } from "../presentation-detail";
 import { SdlcQuestionsLink } from "./questions-link";
 import { SlideTail } from "../slide-tail";
-import { PresentationIcon } from "../presentation-icons";
 import { SlideLayout } from "../slide-layout";
 /** Этап 04. Единую цепочку навыков ещё предстоит собрать — содержание слайда. */
 export function Slide09() {
@@ -15,12 +14,12 @@ export function Slide09() {
           </p>
           <div className="handoff-grid">
             <article>
-              <PresentationIcon name="document"/>
+              <span className="role-number" aria-hidden="true">01</span>
               <h2>Аналитик</h2>
               <p>Отвечает на вопросы.</p>
             </article>
             <article>
-              <PresentationIcon name="code"/>
+              <span className="role-number" aria-hidden="true">02</span>
               <h2>Разработчик</h2>
               <p>
                 Реализует изменение. Корректирует постановку по фактической
@@ -28,7 +27,7 @@ export function Slide09() {
               </p>
             </article>
             <article>
-              <PresentationIcon name="check"/>
+              <span className="role-number" aria-hidden="true">03</span>
               <h2>QA</h2>
               <p>
                 Готовит тест-планы по готовой аналитике, до появления кода.

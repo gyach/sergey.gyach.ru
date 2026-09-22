@@ -12,6 +12,7 @@
   min-width: 0;
 }
 .artifact-groups h2 {
+  color: var(--orange);
   margin: 0 0 8px;
   font-size: 30px;
   line-height: 1.2;
@@ -28,7 +29,7 @@
 }
 .artifact-groups dl > div {
   border-top: 1px solid var(--line);
-  padding: 6px 0;
+  padding: 4px 0;
 }
 .artifact-groups dt {
   font-size: 24px;
@@ -47,8 +48,6 @@
 }
 .artifact-learnings {
   margin: 0 0 12px;
-  padding-left: 14px;
-  border-left: 4px solid var(--orange);
 }
 .pill.dark {
   background: var(--navy);
@@ -606,6 +605,10 @@
 .table-scroll {
   overflow-x: auto;
 }
+#slide-16 th:first-child,
+#slide-16 td:first-child {
+  white-space: nowrap;
+}
 .strategy {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -853,7 +856,7 @@ html:not(.js) .level-footer .detail {
 #slide-11 h1,
 #slide-09 h1,
 #slide-16 h1 {
-  font-size: 41px !important;
+  font-size: 52px !important;
   line-height: 1.16;
   font-weight: 500;
   max-width: none;
@@ -1011,7 +1014,7 @@ html:not(.js) .level-footer .detail {
 .level-step b {
   font-weight: 500;
 }
-/* The exact curve is independent of the three stages and retains its 16:9 PDF geometry. */
+/* Обложка: три этапа с фирменными оранжевыми номерами. */
 #slide-01 {
   position: relative;
   isolation: auto;
@@ -1019,10 +1022,10 @@ html:not(.js) .level-footer .detail {
 }
 
 #slide-01 .slide-inner {
-  padding: 20px 180px 24px;
+  padding: 17.86px 57.74px 24px;
 }
 #slide-01 h1 {
-  font-size: 41px !important;
+  font-size: 64px !important;
   font-weight: 500;
   line-height: 1.16;
 }
@@ -1039,7 +1042,7 @@ html:not(.js) .level-footer .detail {
   justify-content: initial;
   height: auto;
   min-height: 0;
-  margin-top: 0;
+  margin-top: 64px;
   padding: 0;
 }
 #slide-01 .hero-stop {
@@ -1136,34 +1139,6 @@ html:not(.js) .level-footer .detail {
   color: var(--orange);
   font-weight: 500;
 }
-.cover-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-.cover-meta .cover-caption {
-  margin-top: 0 !important;
-}
-/* Обложка: линия в потоке между текстом и тремя опорами на всю ширину холста */
-#slide-01 .wave-band {
-  position: relative;
-  width: 1920px;
-  height: 222.72px;
-  margin: 11.52px -180px 19.2px;
-  pointer-events: none;
-}
-#slide-01 .brandbook-wave {
-  position: absolute;
-  left: 0;
-  top: -190.08px;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16/9;
-  display: block;
-}
 #slide-01 .cover-caption {
   margin-top: 16px;
 }
@@ -1235,16 +1210,78 @@ html:not(.js) .level-footer .detail {
 }
 #slide-19 .contact-layout {
   display: grid;
-  grid-template-columns: minmax(220px, 340px) minmax(0, 1fr);
+  grid-template-columns: 360px minmax(0, 1fr);
   align-items: center;
   gap: 100px;
   margin-top: 38px;
 }
-#slide-19 .contact-avatar {
-  display: block;
-  width: 100%;
+/* Бейдж из концепции, стр. 11: исходное оформление в координатах референса.
+ * Заменены только портрет и персональные поля; масштаб всех деталей общий.
+ */
+.speaker-badge {
+  position: relative;
+  margin: 0;
+  width: 366px;
+  height: 916px;
+  zoom: 0.75;
+  justify-self: center;
+}
+.badge-fastener {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 121px;
+  width: 125px;
+  height: 374px;
+  pointer-events: none;
+}
+.badge-template {
+  position: absolute;
+  inset: 0;
+  width: 366px;
+  height: 916px;
+  pointer-events: none;
+}
+.badge-portrait {
+  position: absolute;
+  top: 498px;
+  left: 74px;
+  width: 218px;
+  height: 218px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+/* Кадр 190×190 от точки (475, 135): исходное фото без генеративной обработки. */
+.badge-portrait img {
+  position: absolute;
+  width: 448.9474%;
+  max-width: none;
   height: auto;
-  border-bottom: 5px solid var(--orange);
+  left: -250%;
+  top: -71.0526%;
+  filter: grayscale(1);
+}
+.badge-caption {
+  position: absolute;
+  top: 734px;
+  left: 30px;
+  width: 264px;
+  color: #000;
+  font-family: var(--font-onest), Arial, sans-serif;
+}
+.badge-caption strong {
+  display: block;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1;
+}
+.badge-caption > span {
+  position: absolute;
+  top: 113px;
+  left: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
 }
 #slide-19 .contact-info h2 {
   font-size: 50px;
@@ -1418,7 +1455,7 @@ html:not(.js) .level-footer .detail {
   padding: 14px 20px;
   border: 0;
   border-left: 3px solid var(--orange);
-  background: rgba(24, 32, 62, 0.04);
+  background: rgb(30 36 61 / 4%);
   color: var(--navy);
   font-size: 20.74px;
   font-weight: 400;
@@ -1445,7 +1482,7 @@ html:not(.js) .level-footer .detail {
 .sdlc-slides {
   --questions-qr-size: 144px;
   --questions-qr-large-size: 180px;
-  --questions-qr-color: #334e68;
+  --questions-qr-color: var(--navy);
 }
 /* QR-код занимает место в потоке той композиции, к которой относится. */
 .slide .questions-link {
@@ -1626,4 +1663,55 @@ html:not(.js) .level-footer .detail {
 /* Короткие надзаголовки скрыты в этой презентации; общий SlideLayout их показывает. */
 .sdlc-slides .slide-inner > .eyebrow {
   display: none !important;
+}
+
+/* Финальный брендбук: оригинальный логотип и увеличенный масштаб обложки. */
+.deck:has(#slide-01.active) {
+  --masthead-height: 240px;
+}
+.deck:has(#slide-01.active) .topbar {
+  padding: 40.7137px 9.7426px 0;
+  align-items: flex-start;
+}
+.deck:has(#slide-01.active) .topbar .brand {
+  width: 342.6116px;
+}
+.deck:has(#slide-01.active) .topline,
+.deck:has(#slide-01.active) .toplabel,
+.deck:has(#slide-01.active) .topnum {
+  display: none;
+}
+
+/* При отсутствии рабочего Rooftop Mono брендбук разрешает системный Arial. */
+.contact-links,
+.contact-site-qr,
+.cover-author-role,
+.cover-author time {
+  font-family: Arial, sans-serif;
+}
+
+/* Фирменный акцент есть на каждом слайде, даже без диаграммы или чисел. */
+.slide h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 5.5px;
+  margin-top: 12px;
+  background: var(--orange);
+}
+#slide-01 h1::after {
+  display: none;
+}
+.role-number {
+  display: block;
+  color: var(--orange);
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1;
+}
+.role-lanes .role-number {
+  font-size: 32px;
+}
+.source-of-truth {
+  display: block;
 }

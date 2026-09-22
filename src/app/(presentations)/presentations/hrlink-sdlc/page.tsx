@@ -23,8 +23,8 @@ import { Slide18 } from "@/components/presentations/hrlink-sdlc/slide-18";
 import { Slide19 } from "@/components/presentations/hrlink-sdlc/slide-19";
 import "./sdlc.css";
 export const metadata: Metadata = {
-    title: "SDLC: от запроса к автономности",
-    description: "Текущий SDLC HRlink: девять навыков, пять этапов и путь к Dark Factory.",
+    title: "SDLC: агенты работают, человек управляет",
+    description: "SDLC HRlink: девять навыков, пять этапов и фоновые агенты с участием человека — Human-in-the-loop. Dark Factory как следующий шаг развития.",
     alternates: { canonical: "https://sergey.gyach.ru/presentations/hrlink-sdlc/" },
 };
 /** Серверная страница: все слайды доступны в статическом экспорте и без JavaScript. */

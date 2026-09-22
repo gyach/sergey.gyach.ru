@@ -8,7 +8,7 @@ export function PresentationFooter() {
         <PresentationDetail title="19 слайдов · оглавление" summary="Оглавление">
             <ol className="contents-list">
               <li>
-                <a href="#slide-01"><span>01</span>Текущий SDLC на пути к Dark Factory</a>
+                <a href="#slide-01"><span>01</span>SDLC: агенты работают, человек управляет</a>
               </li>
               <li>
                 <a href="#slide-02"><span>02</span>Что было и что изменилось</a>
@@ -60,10 +60,10 @@ export function PresentationFooter() {
                 <a href="#slide-15"><span>15</span>Единая цепочка навыков</a>
               </li>
               <li>
-                <a href="#slide-16"><span>16</span>Пять уровней перехода к Dark Factory</a>
+                <a href="#slide-16"><span>16</span>Пять уровней: наша цель — Human-in-the-loop</a>
               </li>
               <li>
-                <a href="#slide-17"><span>17</span>Три шага к Dark Factory</a>
+                <a href="#slide-17"><span>17</span>Три шага к Human-in-the-loop</a>
               </li>
               <li>
                 <a href="#slide-18"><span>18</span>Вопросы участников</a>

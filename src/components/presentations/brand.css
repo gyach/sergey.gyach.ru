@@ -522,7 +522,7 @@ th {
   margin-left: auto;
 }
 :root {
-  --masthead-height: 132px;
+  --masthead-height: 122.1914px;
   --footer-height: 64px;
 }
 body,
@@ -551,13 +551,13 @@ body,
   min-height: calc(
     1080px - var(--masthead-height) - var(--footer-height)
   );
-  padding: 20px 180px 24px;
+  padding: 18.0643px 57.7394px 24px;
 }
 .slide-inner {
   max-width: none;
 }
 .slide h1 {
-  font-size: 41px !important;
+  font-size: 52px !important;
   line-height: 1.16;
   font-weight: 500;
   max-width: none;
@@ -662,9 +662,9 @@ body {
 .topbar .brand {
   order: 0;
   flex: none;
-  width: 116.16px;
+  width: 171.2364px;
   height: auto;
-  aspect-ratio: 311.258/114.375;
+  aspect-ratio: 447.69 / 250.09;
   display: block;
   color: var(--navy);
 }
@@ -756,12 +756,12 @@ body.hrlink-presentation {
 .topbar {
   display: flex;
   align-items: center;
-  gap: 18px;
-  padding: 20px 61.44px;
+  gap: 32px;
+  padding: 0 35.1391px;
 }
 .topbar .brand {
   flex: none;
-  width: 116.16px;
+  width: 171.2364px;
   height: auto;
 }
 .topline {

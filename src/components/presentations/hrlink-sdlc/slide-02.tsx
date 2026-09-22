@@ -45,10 +45,6 @@ export function Slide02() {
               </p>
             </div>
           </ComparisonLayout>
-          <p className="callout">
-            Время подготовки постановки и объём ручных правок мы пока не измеряем.
-            Способ оценки обсудим вместе с проблемами внедрения (слайд 14).
-          </p>
           <SlideTail aside={<SdlcQuestionsLink />} next="Далее: Как это устроено — по пяти этапам, начиная с запроса." />
         </SlideLayout>);
 }
