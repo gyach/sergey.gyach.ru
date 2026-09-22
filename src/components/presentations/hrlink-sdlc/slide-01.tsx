@@ -6,7 +6,7 @@ export function Slide01() {
     return (<SlideLayout number={1} variant="cover" title={<>
             SDLC: агенты работают, человек управляет
           </>} eyebrow={<>HRLINK / НАША РАБОТА</>}>
-          <p className="lead cover-lead">Агенты работают в фоне, в том числе ночью, и ждут нашей обратной связи</p>
+          <p className="lead cover-lead">Цель: агенты работают в фоне, в том числе ночью, и ждут нашего решения</p>
           <div className="hero-route">
             <div className="hero-stop">
               <span className="hero-stage-number">01</span><strong>Постановка на навыках</strong><span>Как работаем сейчас</span>

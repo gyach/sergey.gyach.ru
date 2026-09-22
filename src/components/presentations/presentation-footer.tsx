@@ -36,7 +36,7 @@ export function PresentationFooter() {
                 <a href="#slide-08"><span>08</span>Этап 03. Передача задачи в разработку и публикация</a>
               </li>
               <li>
-                <a href="#slide-09"><span>09</span>Этап 04. Единую цепочку навыков ещё предстоит собрать</a>
+                <a href="#slide-09"><span>09</span>Этап 04. Единый процесс с разработкой и QA ещё предстоит собрать</a>
               </li>
               <li>
                 <a href="#slide-10"><span>10</span>Этап 05. Аналитик обновляет описание продукта
@@ -57,7 +57,7 @@ export function PresentationFooter() {
                   делать</a>
               </li>
               <li>
-                <a href="#slide-15"><span>15</span>Единая цепочка навыков</a>
+                <a href="#slide-15"><span>15</span>Единый процесс аналитики, разработки и QA</a>
               </li>
               <li>
                 <a href="#slide-16"><span>16</span>Пять уровней: наша цель — Human-in-the-loop</a>
@@ -81,7 +81,7 @@ export function PresentationFooter() {
           Полный экран<ControlIcon name="fullscreen"/>
         </button>
       </div>
-      <span className="footer-note">HRLINK · ОТ ЗАПРОСА К АВТОНОМНОСТИ</span>
+      <span className="footer-note">HRLINK · АГЕНТЫ РАБОТАЮТ, ЧЕЛОВЕК УПРАВЛЯЕТ</span>
       <nav className="prevnext" aria-label="Навигация">
         <span className="separator"></span>
         <button id="prev" type="button" title="Назад">

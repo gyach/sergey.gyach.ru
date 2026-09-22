@@ -2,21 +2,24 @@ import { PresentationDetail } from "../presentation-detail";
 import { SdlcQuestionsLink } from "./questions-link";
 import { SlideTail } from "../slide-tail";
 import { SlideLayout } from "../slide-layout";
-/** Этап 04. Единую цепочку навыков ещё предстоит собрать — содержание слайда. */
+/** Этап 04. Единый процесс с разработкой и QA ещё предстоит собрать — содержание слайда. */
 export function Slide09() {
     return (<SlideLayout number={9} variant="content" title={<>
-            Этап 04. Единую цепочку навыков ещё предстоит собрать
+            Этап 04. Единый процесс с разработкой и QA ещё предстоит собрать
           </>} eyebrow={<>ТЕКУЩИЙ ПРОЦЕСС</>}>
           <p className="lead small">
-            У разработки и QA свои навыки. QA-требования уже подключены к
-            проверкам аналитики; общий порядок передачи результатов между
-            всеми ролями ещё предстоит согласовать.
+            У разработки и QA свои навыки. Требования QA к постановке уже входят
+            в ревью аналитики (слайд 06); общий порядок передачи результатов
+            между всеми ролями ещё предстоит согласовать.
           </p>
           <div className="handoff-grid">
             <article>
               <span className="role-number" aria-hidden="true">01</span>
               <h2>Аналитик</h2>
-              <p>Отвечает на вопросы.</p>
+              <p>
+                Отвечает на вопросы разработки и QA к требованиям. Уточняет
+                требования и согласует их изменения.
+              </p>
             </article>
             <article>
               <span className="role-number" aria-hidden="true">02</span>

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 export default function SdlcPresentation() {
     return <>
     <div className="deck">
-      <PresentationHeader label="SDLC · возможности навыков"/>
+      <PresentationHeader label="SDLC · навыки и фоновые агенты"/>
       <main className="sdlc-slides"><Slide01 /><Slide02 /><Slide03 /><Slide04 /><Slide05 /><Slide06 /><Slide07 /><Slide08 /><Slide09 /><Slide10 /><Slide11 /><Slide12 /><Slide13 /><Slide14 /><Slide15 /><Slide16 /><Slide17 /><Slide18 /><Slide19 /></main>
       <PresentationFooter />
     </div>

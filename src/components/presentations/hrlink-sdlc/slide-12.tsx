@@ -23,14 +23,17 @@ export function Slide12() {
             <article>
               <span className="strategy-num">02</span>
               <h2>Проблемы внедрения</h2>
-              <p>Сложности, с которыми мы столкнулись</p>
+              <p>
+                Качество постановок, доверие людей и инструменты: десять
+                проблем и действия по ним
+              </p>
               <a className="pill dark" href="#slide-14">К слайду 14<ControlIcon name="next"/></a>
             </article>
             <article>
               <span className="strategy-num">03</span>
-              <h2>Единая цепочка навыков</h2>
+              <h2>Единый процесс</h2>
               <p>
-                Связать аналитику, разработку и тестирование в общий процесс
+                Связать навыки аналитики, разработки и QA в единый процесс
               </p>
               <a className="pill dark" href="#slide-15">К слайду 15<ControlIcon name="next"/></a>
             </article>

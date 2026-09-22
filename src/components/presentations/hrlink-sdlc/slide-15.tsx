@@ -2,11 +2,11 @@ import { PresentationDetail } from "../presentation-detail";
 import { SdlcQuestionsLink } from "./questions-link";
 import { SlideTail } from "../slide-tail";
 import { SlideLayout } from "../slide-layout";
-/** Единая цепочка навыков — содержание слайда. */
+/** Единый процесс аналитики, разработки и QA — содержание слайда. */
 export function Slide15() {
-    return (<SlideLayout number={15} variant="content" title={<>Единая цепочка навыков</>} eyebrow={<>ЧТО ПРЕДСТОИТ / ЕДИНЫЙ ПРОЦЕСС</>}>
+    return (<SlideLayout number={15} variant="content" title={<>Единый процесс аналитики, разработки и QA</>} eyebrow={<>ЧТО ПРЕДСТОИТ / ЕДИНЫЙ ПРОЦЕСС</>}>
           <p className="lead small">
-            Цель — связать навыки аналитики, разработки и тестирования:
+            Цель — связать навыки аналитики, разработки и QA:
             принятый человеком результат одной роли становится входом для следующей.
           </p>
           <div className="feedback-sequence">
@@ -30,7 +30,7 @@ export function Slide15() {
             </article>
             <article>
               <span>03</span>
-              <b className="chain-role">Тестирование</b>
+              <b className="chain-role">QA</b>
               <h2>Результаты<br />и замечания</h2>
               <p>
                 Сопоставляет поведение продукта с требованиями. Передаёт дефекты
@@ -54,7 +54,7 @@ export function Slide15() {
                   исправление багов с проверкой результата. Это кандидаты
                   для совместной проработки; первый сценарий ещё не выбран.
                 </p>
-                <h3>Как человек участвует в цепочке?</h3>
+                <h3>Как человек участвует в процессе?</h3>
                 <p>
                   Нам предстоит согласовать общий контекст задачи и состав
                   передаваемых результатов. Агент каждой роли самостоятельно

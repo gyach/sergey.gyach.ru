@@ -28,7 +28,7 @@ export function Slide02() {
             <div className="compare-col">
               <span className="eyebrow">Стало</span>
               <p>
-                Единый источник истины — Markdown-файл постановки в Git;
+                Мастер-данные — Markdown-файл постановки в Git;
                 страница в Confluence публикуется из него
               </p>
               <p>
@@ -45,6 +45,6 @@ export function Slide02() {
               </p>
             </div>
           </ComparisonLayout>
-          <SlideTail aside={<SdlcQuestionsLink />} next="Далее: Как это устроено — по пяти этапам, начиная с запроса." />
+          <SlideTail aside={<SdlcQuestionsLink />} next="Далее: как это устроено — по пяти этапам, начиная с запроса." />
         </SlideLayout>);
 }
